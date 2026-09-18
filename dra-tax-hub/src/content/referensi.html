@@ -1,0 +1,107 @@
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Referensi</div>
+    <span class="eyebrow">Kamus</span>
+    <h1>Aturan &amp; Istilah</h1>
+    <p class="lead">Setiap sebutan aturan di halaman materi bisa diklik untuk memunculkan ringkasannya. Halaman ini adalah daftar lengkapnya — plus kamus istilah untuk singkatan yang sering bikin bingung.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+    <div class="filter-bar" style="margin-bottom:18px">
+      <button class="chip on" id="tabAturan">Peraturan</button>
+      <button class="chip" id="tabIstilah">Istilah</button>
+    </div>
+
+    <input class="big-search" id="q" type="search" placeholder="Cari nomor aturan, kata kunci, atau istilah… (mis. 172, transfer pricing, opsen)" autocomplete="off">
+    <p class="hint" id="count" style="margin:10px 0 24px"></p>
+
+    <div id="listAturan"></div>
+    <div id="listIstilah" hidden></div>
+
+    <div class="callout" style="margin-top:30px">
+      <h4>Catatan penting</h4>
+      <p style="margin-bottom:0">Isi di halaman ini adalah <b>ringkasan untuk belajar</b>, bukan kutipan resmi dan bukan nasihat hukum. Untuk pekerjaan nyata atau jawaban yang dinilai juri, buka naskah aslinya lewat tombol “Cari naskah resmi” di tiap kartu, atau lewat <a href="https://jdih.kemenkeu.go.id/" target="_blank" rel="noopener">JDIH Kemenkeu</a> dan <a href="https://peraturan.go.id/" target="_blank" rel="noopener">peraturan.go.id</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!--SCRIPTS-->
+<script>
+(function(){
+  var A = window.DRA_ATURAN || [], I = window.DRA_ISTILAH || [];
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  var tab = "aturan";
+
+  function cariUrl(judul){ return "https://www.google.com/search?q=" + encodeURIComponent(judul + " naskah resmi pdf"); }
+
+  function cardAturan(r){
+    return '<details class="qa" id="' + esc(r.id) + '">' +
+      '<summary><span>' + esc(r.n) + ' — ' + esc(r.j.length > 110 ? r.j.slice(0,110) + "…" : r.j) + "</span></summary>" +
+      '<div class="body">' +
+        '<p class="ref-title">' + esc(r.j) + "</p>" +
+        '<p class="ref-status">' + esc(r.b) + "</p>" +
+        "<h4>Pokok isi</h4><ul>" + (r.p||[]).map(function(x){ return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
+        ((r.k&&r.k.length) ? '<h4>Angka kunci</h4><div class="ref-chips">' + r.k.map(function(x){ return '<span class="tag tag-gold">' + esc(x) + "</span>"; }).join("") + "</div>" : "") +
+        '<div class="ref-actions">' +
+          (r.m ? '<a class="btn btn-outline btn-sm" href="' + esc(r.m[0]) + '">' + esc(r.m[1]) + "</a>" : "") +
+          '<a class="btn btn-outline btn-sm" href="' + cariUrl(r.j) + '" target="_blank" rel="noopener">Cari naskah resmi ↗</a>' +
+        "</div>" +
+      "</div></details>";
+  }
+
+  function cardIstilah(t){
+    return '<details class="qa" id="' + esc(t.id) + '">' +
+      '<summary><span><b>' + esc(t.n) + "</b> — " + esc(t.s) + "</span></summary>" +
+      '<div class="body"><p>' + esc(t.d) + "</p>" +
+        (t.m ? '<div class="ref-actions"><a class="btn btn-outline btn-sm" href="' + esc(t.m) + '">Buka materinya</a></div>' : "") +
+      "</div></details>";
+  }
+
+  function cocok(teks, q){ return teks.toLowerCase().indexOf(q) > -1; }
+
+  function render(){
+    var q = $("q").value.trim().toLowerCase();
+    if (tab === "aturan") {
+      var items = A.filter(function(r){
+        if (!q) return true;
+        return cocok(r.n + " " + r.j + " " + (r.p||[]).join(" ") + " " + (r.k||[]).join(" ") + " " + (r.a||[]).join(" "), q);
+      });
+      $("listAturan").innerHTML = items.map(cardAturan).join("") || '<p class="lead">Tidak ada aturan yang cocok.</p>';
+      $("count").textContent = items.length + " peraturan ditampilkan dari " + A.length + " yang tercatat.";
+    } else {
+      var it = I.filter(function(t){
+        if (!q) return true;
+        return cocok(t.n + " " + t.s + " " + t.d, q);
+      });
+      $("listIstilah").innerHTML = it.map(cardIstilah).join("") || '<p class="lead">Tidak ada istilah yang cocok.</p>';
+      $("count").textContent = it.length + " istilah ditampilkan dari " + I.length + " yang tercatat.";
+    }
+  }
+
+  function setTab(t){
+    tab = t;
+    $("tabAturan").classList.toggle("on", t==="aturan");
+    $("tabIstilah").classList.toggle("on", t==="istilah");
+    $("listAturan").hidden = t !== "aturan";
+    $("listIstilah").hidden = t !== "istilah";
+    render();
+  }
+
+  $("tabAturan").onclick = function(){ setTab("aturan"); };
+  $("tabIstilah").onclick = function(){ setTab("istilah"); };
+  $("q").addEventListener("input", render);
+
+  var params = new URLSearchParams(location.search);
+  setTab(params.get("tab") === "istilah" ? "istilah" : "aturan");
+
+  var target = location.hash.replace(/^#/, "");
+  if (target) {
+    if (I.some(function(t){ return t.id === target; })) setTab("istilah");
+    var el = document.getElementById(target);
+    if (el) { el.open = true; setTimeout(function(){ el.scrollIntoView({block:"center"}); }, 60); }
+  }
+})();
+</script>

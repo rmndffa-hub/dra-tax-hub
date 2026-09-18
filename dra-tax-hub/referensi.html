@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aturan & Istilah</title>
+<meta name="description" content="Kamus peraturan perpajakan dan glosarium istilah, bisa dibuka langsung dari halaman materi.">
+<meta property="og:title" content="Aturan & Istilah">
+<meta property="og:description" content="Kamus peraturan perpajakan dan glosarium istilah, bisa dibuka langsung dari halaman materi.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('dra-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="pill">Amazing Tax 2026</span>
+    <p>Materi ini disusun untuk persiapan Tax Competition UI 2026 — penyisihan 10 Okt, final 6 Nov.</p>
+    <a href="lomba.html">Lihat aturan lombanya →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Logo DRA Consulting">
+      <span class="brand-txt"><b>DRA Tax Hub</b><span>Tax &amp; Financial Solutions</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Beranda</a><a href="materi.html">Materi</a><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Latihan<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kuis.html">Latihan Kuis</a><a href="ujian.html">Mode Ujian</a><a href="bank-soal.html">Bank Soal</a><a href="progres.html">Progres Belajar</a></div></div><div class="nav-drop"><button type="button" class="nav-drop-btn active" aria-expanded="false">Alat<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kalkulator.html">Kalkulator Pajak</a><a href="referensi.html" class="active">Aturan & Istilah</a></div></div><a href="berita.html">Berita</a><a href="lomba.html">Info Lomba</a></nav>
+    <div class="nav-right">
+      <button class="search-trigger" id="searchTrigger" aria-label="Cari materi">
+        <span class="st-ico" aria-hidden="true">🔍</span><span class="st-label">Cari materi…</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Referensi</div>
+    <span class="eyebrow">Kamus</span>
+    <h1>Aturan &amp; Istilah</h1>
+    <p class="lead">Setiap sebutan aturan di halaman materi bisa diklik untuk memunculkan ringkasannya. Halaman ini adalah daftar lengkapnya — plus kamus istilah untuk singkatan yang sering bikin bingung.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+    <div class="filter-bar" style="margin-bottom:18px">
+      <button class="chip on" id="tabAturan">Peraturan</button>
+      <button class="chip" id="tabIstilah">Istilah</button>
+    </div>
+
+    <input class="big-search" id="q" type="search" placeholder="Cari nomor aturan, kata kunci, atau istilah… (mis. 172, transfer pricing, opsen)" autocomplete="off">
+    <p class="hint" id="count" style="margin:10px 0 24px"></p>
+
+    <div id="listAturan"></div>
+    <div id="listIstilah" hidden></div>
+
+    <div class="callout" style="margin-top:30px">
+      <h4>Catatan penting</h4>
+      <p style="margin-bottom:0">Isi di halaman ini adalah <b>ringkasan untuk belajar</b>, bukan kutipan resmi dan bukan nasihat hukum. Untuk pekerjaan nyata atau jawaban yang dinilai juri, buka naskah aslinya lewat tombol “Cari naskah resmi” di tiap kartu, atau lewat <a href="https://jdih.kemenkeu.go.id/" target="_blank" rel="noopener">JDIH Kemenkeu</a> dan <a href="https://peraturan.go.id/" target="_blank" rel="noopener">peraturan.go.id</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-lock">
+          <span class="fb-plate"><img src="assets/img/logo-mark.png" alt="Logo DRA Consulting"></span>
+          <span class="fb-txt"><b>DRA Consulting</b><span>Tax &amp; Financial Solutions</span></span>
+        </div>
+        <p>Pusat materi perpajakan Indonesia. Disusun ulang dari catatan belajar agar bisa dibaca siapa saja, gratis.</p>
+      </div>
+      <div>
+        <h5>Materi</h5>
+        <a href="kup.html">01 · KUP</a>
+        <a href="pph-badan.html">02 · PPh Badan</a>
+        <a href="pph-op.html">03 · PPh OP &amp; PPh 21</a>
+        <a href="potput.html">04 · Potput PPh</a>
+        <a href="ppn.html">05 · PPN &amp; PPnBM</a>
+        <a href="bea-meterai.html">06 · Bea Meterai</a>
+        <a href="pdrd.html">07 · Pajak Daerah</a>
+        <a href="akuntansi-pajak.html">08 · Akuntansi Pajak</a>
+        <a href="perencanaan-pajak.html">09 · Perencanaan Pajak</a>
+      </div>
+      <div>
+        <h5>Latihan</h5>
+        <a href="kuis.html">Latihan Kuis</a>
+        <a href="ujian.html">Mode Ujian</a>
+        <a href="bank-soal.html">Bank Soal</a>
+        <a href="progres.html">Progres Belajar</a>
+      </div>
+      <div>
+        <h5>Alat &amp; Info</h5>
+        <a href="kalkulator.html">Kalkulator Pajak</a>
+        <a href="referensi.html">Aturan &amp; Istilah</a>
+        <a href="berita.html">Berita</a>
+        <a href="tulis-berita.html">Tulis Berita</a>
+        <a href="lomba.html">Info Lomba</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DRA Consulting. Materi untuk keperluan belajar.</span>
+      <span>Dasar hukum per September 2026 — selalu cek peraturan terbaru sebelum dipakai untuk pekerjaan nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="searchModal" hidden>
+  <div class="modal-box" role="dialog" aria-label="Pencarian materi">
+    <input id="searchInput" type="search" placeholder="Cari tarif, istilah, atau aturan…" autocomplete="off">
+    <div class="results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/referensi.js"></script>
+<script src="assets/js/progres-store.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ref.js"></script>
+<script>
+(function(){
+  var A = window.DRA_ATURAN || [], I = window.DRA_ISTILAH || [];
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  var tab = "aturan";
+
+  function cariUrl(judul){ return "https://www.google.com/search?q=" + encodeURIComponent(judul + " naskah resmi pdf"); }
+
+  function cardAturan(r){
+    return '<details class="qa" id="' + esc(r.id) + '">' +
+      '<summary><span>' + esc(r.n) + ' — ' + esc(r.j.length > 110 ? r.j.slice(0,110) + "…" : r.j) + "</span></summary>" +
+      '<div class="body">' +
+        '<p class="ref-title">' + esc(r.j) + "</p>" +
+        '<p class="ref-status">' + esc(r.b) + "</p>" +
+        "<h4>Pokok isi</h4><ul>" + (r.p||[]).map(function(x){ return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" +
+        ((r.k&&r.k.length) ? '<h4>Angka kunci</h4><div class="ref-chips">' + r.k.map(function(x){ return '<span class="tag tag-gold">' + esc(x) + "</span>"; }).join("") + "</div>" : "") +
+        '<div class="ref-actions">' +
+          (r.m ? '<a class="btn btn-outline btn-sm" href="' + esc(r.m[0]) + '">' + esc(r.m[1]) + "</a>" : "") +
+          '<a class="btn btn-outline btn-sm" href="' + cariUrl(r.j) + '" target="_blank" rel="noopener">Cari naskah resmi ↗</a>' +
+        "</div>" +
+      "</div></details>";
+  }
+
+  function cardIstilah(t){
+    return '<details class="qa" id="' + esc(t.id) + '">' +
+      '<summary><span><b>' + esc(t.n) + "</b> — " + esc(t.s) + "</span></summary>" +
+      '<div class="body"><p>' + esc(t.d) + "</p>" +
+        (t.m ? '<div class="ref-actions"><a class="btn btn-outline btn-sm" href="' + esc(t.m) + '">Buka materinya</a></div>' : "") +
+      "</div></details>";
+  }
+
+  function cocok(teks, q){ return teks.toLowerCase().indexOf(q) > -1; }
+
+  function render(){
+    var q = $("q").value.trim().toLowerCase();
+    if (tab === "aturan") {
+      var items = A.filter(function(r){
+        if (!q) return true;
+        return cocok(r.n + " " + r.j + " " + (r.p||[]).join(" ") + " " + (r.k||[]).join(" ") + " " + (r.a||[]).join(" "), q);
+      });
+      $("listAturan").innerHTML = items.map(cardAturan).join("") || '<p class="lead">Tidak ada aturan yang cocok.</p>';
+      $("count").textContent = items.length + " peraturan ditampilkan dari " + A.length + " yang tercatat.";
+    } else {
+      var it = I.filter(function(t){
+        if (!q) return true;
+        return cocok(t.n + " " + t.s + " " + t.d, q);
+      });
+      $("listIstilah").innerHTML = it.map(cardIstilah).join("") || '<p class="lead">Tidak ada istilah yang cocok.</p>';
+      $("count").textContent = it.length + " istilah ditampilkan dari " + I.length + " yang tercatat.";
+    }
+  }
+
+  function setTab(t){
+    tab = t;
+    $("tabAturan").classList.toggle("on", t==="aturan");
+    $("tabIstilah").classList.toggle("on", t==="istilah");
+    $("listAturan").hidden = t !== "aturan";
+    $("listIstilah").hidden = t !== "istilah";
+    render();
+  }
+
+  $("tabAturan").onclick = function(){ setTab("aturan"); };
+  $("tabIstilah").onclick = function(){ setTab("istilah"); };
+  $("q").addEventListener("input", render);
+
+  var params = new URLSearchParams(location.search);
+  setTab(params.get("tab") === "istilah" ? "istilah" : "aturan");
+
+  var target = location.hash.replace(/^#/, "");
+  if (target) {
+    if (I.some(function(t){ return t.id === target; })) setTab("istilah");
+    var el = document.getElementById(target);
+    if (el) { el.open = true; setTimeout(function(){ el.scrollIntoView({block:"center"}); }, 60); }
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / <a href="materi.html">Materi</a> / PPh Badan</div>
+    <span class="eyebrow">Modul 02</span>
+    <h1>PPh Badan</h1>
+    <p class="lead">Inti PPh Badan cuma satu perjalanan: dari laba akuntansi menuju penghasilan kena pajak, lalu dikalikan tarif, lalu dikurangi yang sudah dibayar sepanjang tahun.</p>
+  </div>
+</section>
+
+<div class="wrap doc">
+  <aside class="toc">
+    <h5>Di halaman ini</h5>
+    <a href="#alur">1. Alur perhitungan</a>
+    <a href="#tarif">2. Tarif &amp; Pasal 31E</a>
+    <a href="#umkm">3. UMKM badan 0,5%</a>
+    <a href="#koreksi">4. Koreksi fiskal</a>
+    <a href="#biaya">5. Boleh vs tidak boleh dibiayakan</a>
+    <a href="#penyusutan">6. Penyusutan &amp; amortisasi</a>
+    <a href="#rugi">7. Kompensasi kerugian</a>
+    <a href="#angsuran">8. PPh 25 dan PPh 29</a>
+    <a href="#ringkas">Ringkasan angka</a>
+  </aside>
+
+  <article>
+    <h2 id="alur">1. Alur perhitungan, sekali lihat</h2>
+    <ol class="steps">
+      <li><b>Laba komersial</b> menurut laporan laba rugi.</li>
+      <li><b>± Koreksi fiskal</b> — menyesuaikan dengan aturan pajak.</li>
+      <li><b>= Penghasilan neto fiskal</b>.</li>
+      <li><b>− Kompensasi kerugian</b> tahun-tahun sebelumnya (maksimal 5 tahun).</li>
+      <li><b>= Penghasilan Kena Pajak (PKP)</b>, dibulatkan ke ribuan penuh ke bawah.</li>
+      <li><b>× Tarif 22%</b> (atau 11% untuk bagian yang dapat fasilitas 31E).</li>
+      <li><b>− Kredit pajak</b> (PPh 22, 23, 24, dan angsuran PPh 25) → sisanya <b>PPh Pasal 29</b> yang harus dilunasi.</li>
+    </ol>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Cek omzet → belah PKP → 11% dan 22%.”</p>
+      <p style="margin-bottom:0">Jangan langsung mengalikan 22%. Lihat dulu peredaran brutonya, karena itu yang menentukan apakah PKP harus dibelah dua.</p>
+    </div>
+
+    <h2 id="tarif">2. Tarif &amp; fasilitas Pasal 31E</h2>
+    <p>Tarif umum PPh Badan adalah <b>22%</b> (UU HPP, berlaku sejak tahun pajak 2022). Perseroan terbuka yang memenuhi syarat tertentu — antara lain minimal 40% saham disetor diperdagangkan di bursa dan dimiliki oleh paling sedikit 300 pihak — mendapat tarif <b>3% lebih rendah</b>, yaitu 19%.</p>
+    <p>Pasal 31E memberi potongan 50% dari tarif untuk wajib pajak badan dalam negeri dengan peredaran bruto sampai <b>Rp50 miliar</b>. Tiga kemungkinan:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Peredaran bruto setahun</th><th>Perlakuan</th></tr></thead>
+        <tbody>
+          <tr><td>≤ Rp4,8 miliar</td><td><b>Seluruh</b> PKP kena tarif 50% × 22% = <b>11%</b></td></tr>
+          <tr><td>&gt; Rp4,8 M s.d. Rp50 M</td><td>PKP <b>dibelah</b>: bagian berfasilitas 11%, sisanya 22%</td></tr>
+          <tr><td>&gt; Rp50 miliar</td><td>Seluruh PKP kena <b>22%</b>, tanpa fasilitas</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Rumus bagian yang mendapat fasilitas:</p>
+    <div class="callout">
+      <p style="margin-bottom:0"><code>PKP fasilitas = (Rp4.800.000.000 ÷ peredaran bruto) × PKP</code><br>
+      <code>PPh = (11% × PKP fasilitas) + (22% × sisa PKP)</code></p>
+    </div>
+
+    <h3>Contoh</h3>
+    <p>PT Andalan: peredaran bruto Rp24 miliar, PKP Rp1,2 miliar.</p>
+    <ul>
+      <li>PKP fasilitas = (4,8 M ÷ 24 M) × 1,2 M = <b>Rp240 juta</b> → 11% × 240 jt = Rp26.400.000</li>
+      <li>Sisa PKP = 1,2 M − 240 jt = <b>Rp960 juta</b> → 22% × 960 jt = Rp211.200.000</li>
+      <li><b>Total PPh terutang = Rp237.600.000</b></li>
+    </ul>
+
+    <h2 id="umkm">3. UMKM badan: PPh final 0,5%</h2>
+    <p>Berdasarkan <b>PP 55/2022</b>, wajib pajak dengan peredaran bruto tidak melebihi Rp4,8 miliar setahun dapat memilih tarif final <b>0,5% dari peredaran bruto</b> — bukan dari laba.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Subjek</th><th>Jangka waktu maksimal</th></tr></thead>
+        <tbody>
+          <tr><td>Orang pribadi</td><td>7 tahun pajak</td></tr>
+          <tr><td>Koperasi, CV, firma, BUMDes</td><td>4 tahun pajak</td></tr>
+          <tr><td>Perseroan Terbatas (PT)</td><td>3 tahun pajak</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Setelah jangka waktunya habis, wajib pajak kembali ke tarif umum dengan pembukuan. Fasilitas peredaran bruto tidak kena pajak Rp500 juta hanya untuk <b>orang pribadi</b>, tidak berlaku untuk badan.</p>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Nol koma lima, bukan lima.”</p>
+      <p style="margin-bottom:0">Tarif UMKM <b>0,5%</b>. Dan urutan waktunya menurun sesuai formalitas badannya: OP 7 → CV/koperasi 4 → PT 3.</p>
+    </div>
+
+    <h2 id="koreksi">4. Koreksi fiskal: arahnya dulu, angkanya belakangan</h2>
+    <p>Koreksi fiskal menyesuaikan laba komersial dengan aturan pajak. Dua sumbu yang harus dipisahkan:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>&nbsp;</th><th>Beda tetap</th><th>Beda temporer</th></tr></thead>
+        <tbody>
+          <tr><td>Definisi</td><td>Selamanya berbeda</td><td>Beda waktu pengakuan saja</td></tr>
+          <tr><td>Contoh</td><td>Sumbangan, sanksi pajak, penghasilan final</td><td>Selisih penyusutan, penyisihan piutang</td></tr>
+          <tr><td>Pajak tangguhan</td><td>Tidak menimbulkan</td><td>Menimbulkan aset/liabilitas pajak tangguhan</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar arah koreksi</h4>
+      <p class="q">Koreksi <b>positif</b> menambah PKP, koreksi <b>negatif</b> mengurangi PKP.</p>
+      <ul style="margin-bottom:0">
+        <li><b>Biaya</b> yang tidak boleh diakui pajak → koreksi <b>positif</b> (laba naik).</li>
+        <li><b>Penghasilan</b> yang sudah final atau bukan objek → koreksi <b>negatif</b> (laba turun).</li>
+        <li>Penyusutan fiskal lebih besar dari komersial → koreksi negatif; lebih kecil → koreksi positif.</li>
+      </ul>
+    </div>
+
+    <h2 id="biaya">5. Boleh vs tidak boleh dibiayakan</h2>
+    <p>Prinsip Pasal 6: biaya boleh dikurangkan jika berkaitan dengan <b>3M</b> — mendapatkan, menagih, dan memelihara penghasilan yang merupakan objek pajak non-final.</p>
+    <div class="grid grid-2" style="margin:20px 0">
+      <div class="callout ok">
+        <h4>Boleh (Pasal 6)</h4>
+        <ul style="margin-bottom:0">
+          <li>Biaya usaha rutin, gaji, sewa, bunga</li>
+          <li>Penyusutan &amp; amortisasi</li>
+          <li>Iuran dana pensiun yang disahkan</li>
+          <li>Kerugian penjualan/pengalihan harta usaha</li>
+          <li>Piutang nyata-nyata tidak tertagih (syarat administratif terpenuhi)</li>
+          <li>Sumbangan tertentu: bencana nasional, penelitian, pendidikan, olahraga, infrastruktur sosial</li>
+          <li>Natura &amp; kenikmatan — <b>boleh sejak UU HPP</b></li>
+        </ul>
+      </div>
+      <div class="callout warn">
+        <h4>Tidak boleh (Pasal 9)</h4>
+        <ul style="margin-bottom:0">
+          <li>Pembagian laba/dividen dalam bentuk apa pun</li>
+          <li>Biaya untuk kepentingan pribadi pemegang saham</li>
+          <li>Pembentukan/pemupukan dana cadangan (kecuali industri tertentu: bank, asuransi, dsb.)</li>
+          <li>Premi asuransi pribadi yang dibayar wajib pajak sendiri</li>
+          <li><b>Sanksi perpajakan</b>: bunga, denda, kenaikan</li>
+          <li>PPh itu sendiri</li>
+          <li>Biaya untuk mendapatkan penghasilan yang <b>bukan objek</b> atau <b>sudah final</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar natura</h4>
+      <p class="q">“Sekarang sejalan: natura kena pajak di karyawan, maka jadi biaya di perusahaan.”</p>
+      <p style="margin-bottom:0">UU HPP membalik aturan lama. Sebelumnya natura tidak dipajaki di karyawan sekaligus tidak boleh dibiayakan; sekarang keduanya sejalan. Pengecualian yang tetap bebas pajak: makanan/minuman di tempat kerja, natura di daerah tertentu, keperluan keselamatan kerja, natura dari APBN/APBD, dan jenis/batasan tertentu sesuai PMK 66/2023.</p>
+    </div>
+
+    <h2 id="penyusutan">6. Penyusutan &amp; amortisasi</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kelompok harta</th><th>Masa manfaat</th><th>Garis lurus</th><th>Saldo menurun</th></tr></thead>
+        <tbody>
+          <tr><td>Bukan bangunan — Kelompok 1</td><td>4 tahun</td><td>25%</td><td>50%</td></tr>
+          <tr><td>Bukan bangunan — Kelompok 2</td><td>8 tahun</td><td>12,5%</td><td>25%</td></tr>
+          <tr><td>Bukan bangunan — Kelompok 3</td><td>16 tahun</td><td>6,25%</td><td>12,5%</td></tr>
+          <tr><td>Bukan bangunan — Kelompok 4</td><td>20 tahun</td><td>5%</td><td>10%</td></tr>
+          <tr><td><b>Bangunan permanen</b></td><td>20 tahun</td><td><b>5%</b></td><td>—</td></tr>
+          <tr><td><b>Bangunan tidak permanen</b></td><td>10 tahun</td><td><b>10%</b></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Permanen 5%, tidak permanen 10%, bangunan hanya garis lurus.”</p>
+      <p style="margin-bottom:0">Metode saldo menurun <b>tidak berlaku</b> untuk bangunan. Dan tarif saldo menurun selalu dua kali tarif garis lurusnya.</p>
+    </div>
+    <ul>
+      <li>Penyusutan dimulai pada <b>bulan dilakukannya pengeluaran</b>, bukan awal tahun. Jadi aset yang dibeli Juli hanya disusutkan 6/12 di tahun pertama — ini jebakan hitungan yang paling sering memakan korban.</li>
+      <li>Saldo menurun dihitung dari <b>nilai sisa buku</b>, dan pada tahun terakhir sisa bukunya disusutkan sekaligus.</li>
+      <li>Amortisasi harta tak berwujud memakai kelompok masa manfaat yang sama (4/8/16/20 tahun).</li>
+      <li>Sejak UU HPP, bangunan permanen dengan masa manfaat nyata lebih dari 20 tahun boleh disusutkan sesuai masa manfaat sebenarnya.</li>
+    </ul>
+
+    <h2 id="rugi">7. Kompensasi kerugian</h2>
+    <p>Kerugian fiskal dapat dikompensasikan dengan laba selama <b>5 tahun</b> berturut-turut setelah tahun terjadinya rugi (bisa lebih lama untuk usaha di bidang tertentu dengan fasilitas). Kerugian dari usaha di luar negeri dan dari penghasilan yang dikenai PPh final <b>tidak</b> boleh dikompensasikan.</p>
+
+    <h2 id="angsuran">8. PPh 25 dan PPh 29</h2>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“PPh 25 itu cicilan, PPh 29 itu pelunasan.”</p>
+      <p style="margin-bottom:0">Cicilan dibayar tiap bulan selama tahun berjalan; pelunasan dibayar <b>sebelum</b> SPT Tahunan disampaikan.</p>
+    </div>
+    <p>Angsuran PPh 25 untuk tahun berjalan = (PPh terutang tahun lalu − kredit pajak PPh 21/22/23/24) ÷ 12.</p>
+    <p>Untuk masa sebelum SPT Tahunan tahun lalu disampaikan (biasanya Januari–Maret), angsuran sama dengan angsuran bulan Desember tahun sebelumnya. Wajib pajak bisa mengajukan pengurangan angsuran bila diperkirakan PPh terutang tahun ini turun lebih dari 25%.</p>
+
+    <h2 id="ringkas">Ringkasan angka PPh Badan</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hal</th><th>Angka</th></tr></thead>
+        <tbody>
+          <tr><td>Tarif umum</td><td>22%</td></tr>
+          <tr><td>Tarif Tbk memenuhi syarat</td><td>19%</td></tr>
+          <tr><td>Fasilitas 31E</td><td>50% × 22% = 11% atas bagian berfasilitas</td></tr>
+          <tr><td>Batas fasilitas 31E</td><td>peredaran bruto ≤ Rp50 miliar; pembagi Rp4,8 miliar</td></tr>
+          <tr><td>UMKM final</td><td>0,5% — PT 3 th, CV/koperasi 4 th, OP 7 th</td></tr>
+          <tr><td>Kompensasi kerugian</td><td>5 tahun</td></tr>
+          <tr><td>Bangunan permanen / tidak permanen</td><td>20 th (5%) / 10 th (10%), garis lurus</td></tr>
+          <tr><td>PPh 25</td><td>PPh tahun lalu setelah kredit ÷ 12</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <a href="kup.html"><span>Sebelumnya</span><b>← KUP</b></a>
+      <a href="pph-op.html"><span>Modul berikutnya</span><b>PPh OP &amp; PPh 21 →</b></a>
+    </div>
+  </article>
+</div>

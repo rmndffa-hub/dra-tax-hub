@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akuntansi Perpajakan</title>
+<meta name="description" content="Beda tetap vs beda temporer, koreksi fiskal, serta aset dan liabilitas pajak tangguhan.">
+<meta property="og:title" content="Akuntansi Perpajakan">
+<meta property="og:description" content="Beda tetap vs beda temporer, koreksi fiskal, serta aset dan liabilitas pajak tangguhan.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('dra-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="pill">Amazing Tax 2026</span>
+    <p>Materi ini disusun untuk persiapan Tax Competition UI 2026 — penyisihan 10 Okt, final 6 Nov.</p>
+    <a href="lomba.html">Lihat aturan lombanya →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Logo DRA Consulting">
+      <span class="brand-txt"><b>DRA Tax Hub</b><span>Tax &amp; Financial Solutions</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Beranda</a><a href="materi.html" class="active">Materi</a><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Latihan<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kuis.html">Latihan Kuis</a><a href="ujian.html">Mode Ujian</a><a href="bank-soal.html">Bank Soal</a><a href="progres.html">Progres Belajar</a></div></div><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Alat<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kalkulator.html">Kalkulator Pajak</a><a href="referensi.html">Aturan & Istilah</a></div></div><a href="berita.html">Berita</a><a href="lomba.html">Info Lomba</a></nav>
+    <div class="nav-right">
+      <button class="search-trigger" id="searchTrigger" aria-label="Cari materi">
+        <span class="st-ico" aria-hidden="true">🔍</span><span class="st-label">Cari materi…</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / <a href="materi.html">Materi</a> / Akuntansi Perpajakan</div>
+    <span class="eyebrow">Modul 08</span>
+    <h1>Akuntansi Perpajakan</h1>
+    <p class="lead">Jembatan antara laporan keuangan dan SPT. Akuntansi mengukur kinerja ekonomi, pajak mengukur kemampuan membayar — dan karena tujuannya berbeda, angkanya pun berbeda.</p>
+  </div>
+</section>
+
+<div class="wrap doc">
+  <aside class="toc">
+    <h5>Di halaman ini</h5>
+    <a href="#dua-laba">1. Dua laba, satu transaksi</a>
+    <a href="#beda">2. Beda tetap vs temporer</a>
+    <a href="#arah">3. Arah koreksi fiskal</a>
+    <a href="#tangguhan">4. Pajak tangguhan</a>
+    <a href="#jurnal">5. Jurnal yang sering diuji</a>
+    <a href="#rekonsiliasi">6. Contoh rekonsiliasi</a>
+    <a href="#ringkas">Ringkasan</a>
+  </aside>
+
+  <article>
+    <h2 id="dua-laba">1. Dua laba, satu transaksi</h2>
+    <p><b>Laba komersial</b> disusun menurut standar akuntansi untuk kepentingan pemegang saham dan kreditur. <b>Laba fiskal</b> disusun menurut undang-undang pajak untuk menghitung pajak terutang. Satu transaksi bisa diperlakukan berbeda oleh keduanya, dan proses mempertemukannya disebut <b>rekonsiliasi fiskal</b>.</p>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Akuntansi bertanya ‘berapa untungnya?’, pajak bertanya ‘berapa yang boleh diakui?’.”</p>
+    </div>
+
+    <h2 id="beda">2. Beda tetap vs beda temporer</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>&nbsp;</th><th>Beda tetap (permanen)</th><th>Beda temporer (waktu)</th></tr></thead>
+        <tbody>
+          <tr><td>Sifat</td><td>Tidak akan pernah bertemu</td><td>Bertemu pada akhirnya, hanya beda periode</td></tr>
+          <tr><td>Contoh biaya</td><td>Sanksi pajak, sumbangan tidak memenuhi syarat, biaya pribadi pemegang saham</td><td>Selisih penyusutan komersial vs fiskal, penyisihan piutang, imbalan kerja PSAK 24</td></tr>
+          <tr><td>Contoh penghasilan</td><td>Penghasilan yang sudah dikenai PPh final, dividen bukan objek</td><td>Pendapatan yang diakui akrual tapi dipajaki saat kas diterima</td></tr>
+          <tr><td>Pajak tangguhan</td><td><b>Tidak</b> menimbulkan</td><td><b>Menimbulkan</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Tetap = tidak pernah ketemu. Temporer = ketemu, tapi nanti.”</p>
+      <p style="margin-bottom:0">Kalau bedanya akan terbalik sendiri di tahun-tahun berikutnya, dia temporer, dan harus dicatat sebagai pajak tangguhan.</p>
+    </div>
+
+    <h2 id="arah">3. Arah koreksi fiskal</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Situasi</th><th>Koreksi</th><th>Efek ke laba fiskal</th></tr></thead>
+        <tbody>
+          <tr><td>Biaya diakui komersial, tidak boleh menurut pajak</td><td><b>Positif</b></td><td>Naik</td></tr>
+          <tr><td>Penghasilan diakui komersial, sudah final / bukan objek</td><td><b>Negatif</b></td><td>Turun</td></tr>
+          <tr><td>Penyusutan fiskal &gt; komersial</td><td>Negatif</td><td>Turun</td></tr>
+          <tr><td>Penyusutan fiskal &lt; komersial</td><td>Positif</td><td>Naik</td></tr>
+          <tr><td>Penghasilan diakui pajak, belum diakui komersial</td><td>Positif</td><td>Naik</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Positif berarti PKP naik — dan biaya yang ditolak selalu membuat PKP naik.”</p>
+      <p style="margin-bottom:0">Jangan hafalkan daftarnya. Tanyakan satu hal: setelah dikoreksi, laba kena pajaknya jadi lebih besar atau lebih kecil? Lebih besar → positif.</p>
+    </div>
+
+    <h2 id="tangguhan">4. Aset vs liabilitas pajak tangguhan</h2>
+    <p>PSAK 46 memakai pendekatan neraca: bandingkan nilai tercatat aset/liabilitas menurut akuntansi dengan dasar pengenaan pajaknya.</p>
+    <div class="grid grid-2" style="margin:20px 0">
+      <div class="callout ok">
+        <h4>Aset Pajak Tangguhan (DTA)</h4>
+        <p>Muncul saat perusahaan <b>membayar pajak lebih dulu</b> sekarang, dan akan hemat pajak di masa depan.</p>
+        <p style="margin-bottom:0">Ciri: koreksi fiskal <b>positif</b> yang bersifat temporer. Contoh: penyisihan piutang tak tertagih yang belum boleh dibiayakan, akrual imbalan kerja, rugi fiskal yang dapat dikompensasikan.</p>
+      </div>
+      <div class="callout warn">
+        <h4>Liabilitas Pajak Tangguhan (DTL)</h4>
+        <p>Muncul saat perusahaan <b>menunda pembayaran pajak</b> sekarang, dan akan membayar lebih di masa depan.</p>
+        <p style="margin-bottom:0">Ciri: koreksi fiskal <b>negatif</b> yang bersifat temporer. Contoh klasik: penyusutan fiskal dipercepat sehingga biaya fiskal lebih besar di awal.</p>
+      </div>
+    </div>
+    <div class="anchor-box">
+      <h4>Jangkar</h4>
+      <p class="q">“Bayar duluan → aset. Bayar belakangan → liabilitas.”</p>
+      <p style="margin-bottom:0">Sama seperti sewa dibayar di muka adalah aset, dan utang adalah liabilitas. Pajak tangguhan dihitung dengan mengalikan selisih temporer dengan tarif pajak yang berlaku, yaitu 22%.</p>
+    </div>
+
+    <h2 id="jurnal">5. Jurnal yang sering diuji</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Peristiwa</th><th>Jurnal</th></tr></thead>
+        <tbody>
+          <tr><td>Mengakui beban pajak kini</td><td>D. Beban Pajak Kini<br>&nbsp;&nbsp;&nbsp;K. Utang PPh Pasal 29</td></tr>
+          <tr><td>Angsuran PPh 25 dibayar</td><td>D. PPh Pasal 25 Dibayar di Muka<br>&nbsp;&nbsp;&nbsp;K. Kas</td></tr>
+          <tr><td>Mengakui aset pajak tangguhan</td><td>D. Aset Pajak Tangguhan<br>&nbsp;&nbsp;&nbsp;K. Manfaat Pajak Tangguhan</td></tr>
+          <tr><td>Mengakui liabilitas pajak tangguhan</td><td>D. Beban Pajak Tangguhan<br>&nbsp;&nbsp;&nbsp;K. Liabilitas Pajak Tangguhan</td></tr>
+          <tr><td>Memotong PPh 23 atas jasa yang dibayar</td><td>D. Beban Jasa<br>&nbsp;&nbsp;&nbsp;K. Utang PPh Pasal 23<br>&nbsp;&nbsp;&nbsp;K. Kas</td></tr>
+          <tr><td>Penjualan kena PPN oleh PKP</td><td>D. Kas/Piutang<br>&nbsp;&nbsp;&nbsp;K. Penjualan<br>&nbsp;&nbsp;&nbsp;K. PPN Keluaran</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Beban pajak penghasilan di laporan laba rugi = <b>beban pajak kini + beban (manfaat) pajak tangguhan</b>.</p>
+
+    <h2 id="rekonsiliasi">6. Contoh rekonsiliasi singkat</h2>
+    <p>PT Sejahtera, laba komersial sebelum pajak Rp2.000.000.000. Data:</p>
+    <ul>
+      <li>Biaya sanksi pajak Rp25.000.000</li>
+      <li>Sumbangan tanpa syarat Rp15.000.000</li>
+      <li>Pendapatan bunga deposito Rp80.000.000 (sudah final)</li>
+      <li>Penyusutan komersial Rp300.000.000; penyusutan fiskal Rp350.000.000</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Uraian</th><th>Jenis</th><th>Jumlah</th></tr></thead>
+        <tbody>
+          <tr><td>Laba komersial</td><td></td><td>2.000.000.000</td></tr>
+          <tr><td>Koreksi positif — sanksi pajak</td><td>tetap</td><td>+25.000.000</td></tr>
+          <tr><td>Koreksi positif — sumbangan</td><td>tetap</td><td>+15.000.000</td></tr>
+          <tr><td>Koreksi negatif — bunga deposito (final)</td><td>tetap</td><td>−80.000.000</td></tr>
+          <tr><td>Koreksi negatif — selisih penyusutan</td><td><b>temporer</b></td><td>−50.000.000</td></tr>
+          <tr><td><b>Penghasilan Kena Pajak</b></td><td></td><td><b>1.910.000.000</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Pajak kini = 22% × 1.910.000.000 = <b>Rp420.200.000</b> (asumsi peredaran bruto &gt; Rp50 M sehingga tanpa fasilitas 31E)</li>
+      <li>Selisih temporer Rp50.000.000 → <b>liabilitas pajak tangguhan</b> = 22% × 50 jt = <b>Rp11.000.000</b></li>
+      <li>Beban pajak di laba rugi = 420.200.000 + 11.000.000 = <b>Rp431.200.000</b></li>
+    </ul>
+
+    <h2 id="ringkas">Ringkasan</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hal</th><th>Ketentuan</th></tr></thead>
+        <tbody>
+          <tr><td>Standar</td><td>PSAK 46 — Pajak Penghasilan</td></tr>
+          <tr><td>Tarif untuk pajak tangguhan</td><td>22%</td></tr>
+          <tr><td>Koreksi positif</td><td>PKP naik — biaya ditolak, penghasilan belum diakui komersial</td></tr>
+          <tr><td>Koreksi negatif</td><td>PKP turun — penghasilan final/bukan objek, penyusutan fiskal lebih besar</td></tr>
+          <tr><td>Beda tetap</td><td>Tidak menimbulkan pajak tangguhan</td></tr>
+          <tr><td>Beban pajak LR</td><td>pajak kini + pajak tangguhan</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <a href="pdrd.html"><span>Sebelumnya</span><b>← Pajak Daerah</b></a>
+      <a href="perencanaan-pajak.html"><span>Modul berikutnya</span><b>Perencanaan Pajak →</b></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-lock">
+          <span class="fb-plate"><img src="assets/img/logo-mark.png" alt="Logo DRA Consulting"></span>
+          <span class="fb-txt"><b>DRA Consulting</b><span>Tax &amp; Financial Solutions</span></span>
+        </div>
+        <p>Pusat materi perpajakan Indonesia. Disusun ulang dari catatan belajar agar bisa dibaca siapa saja, gratis.</p>
+      </div>
+      <div>
+        <h5>Materi</h5>
+        <a href="kup.html">01 · KUP</a>
+        <a href="pph-badan.html">02 · PPh Badan</a>
+        <a href="pph-op.html">03 · PPh OP &amp; PPh 21</a>
+        <a href="potput.html">04 · Potput PPh</a>
+        <a href="ppn.html">05 · PPN &amp; PPnBM</a>
+        <a href="bea-meterai.html">06 · Bea Meterai</a>
+        <a href="pdrd.html">07 · Pajak Daerah</a>
+        <a href="akuntansi-pajak.html">08 · Akuntansi Pajak</a>
+        <a href="perencanaan-pajak.html">09 · Perencanaan Pajak</a>
+      </div>
+      <div>
+        <h5>Latihan</h5>
+        <a href="kuis.html">Latihan Kuis</a>
+        <a href="ujian.html">Mode Ujian</a>
+        <a href="bank-soal.html">Bank Soal</a>
+        <a href="progres.html">Progres Belajar</a>
+      </div>
+      <div>
+        <h5>Alat &amp; Info</h5>
+        <a href="kalkulator.html">Kalkulator Pajak</a>
+        <a href="referensi.html">Aturan &amp; Istilah</a>
+        <a href="berita.html">Berita</a>
+        <a href="tulis-berita.html">Tulis Berita</a>
+        <a href="lomba.html">Info Lomba</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DRA Consulting. Materi untuk keperluan belajar.</span>
+      <span>Dasar hukum per September 2026 — selalu cek peraturan terbaru sebelum dipakai untuk pekerjaan nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="searchModal" hidden>
+  <div class="modal-box" role="dialog" aria-label="Pencarian materi">
+    <input id="searchInput" type="search" placeholder="Cari tarif, istilah, atau aturan…" autocomplete="off">
+    <div class="results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/referensi.js"></script>
+<script src="assets/js/progres-store.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ref.js"></script>
+
+</body>
+</html>

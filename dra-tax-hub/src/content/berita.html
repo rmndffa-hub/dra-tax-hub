@@ -1,0 +1,276 @@
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Berita</div>
+    <span class="eyebrow">Portal berita pajak</span>
+    <h1>Berita &amp; Isu Terkini</h1>
+    <p class="lead">Dua kanal: <b>kurasi</b> berisi artikel yang kamu tulis sendiri lengkap dengan bahan debatnya, <b>umpan otomatis</b> menarik judul terbaru dari berbagai sumber setiap enam jam.</p>
+    <div class="hero-cta" style="margin-top:18px">
+      <a class="btn btn-primary" href="tulis-berita.html">+ Tulis berita baru</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+
+    <div id="listView">
+      <div class="filter-bar" style="margin-bottom:16px">
+        <button class="chip on" id="tabKurasi">Kurasi &amp; analisis</button>
+        <button class="chip" id="tabUmpan">Umpan otomatis</button>
+      </div>
+
+      <div id="panelKurasi">
+        <div class="filter-bar" id="subBar"></div>
+        <div class="filter-bar" id="tagBar"></div>
+        <div class="news-grid" id="newsList"></div>
+        <p id="emptyNews" class="lead" hidden>Belum ada artikel untuk saringan ini.</p>
+      </div>
+
+      <div id="panelUmpan" hidden>
+        <div class="filter-bar" id="subBarFeed"></div>
+        <p class="hint" id="feedStatus" style="margin-bottom:18px"></p>
+        <div id="feedList"></div>
+        <details class="qa" id="sumberBox" style="margin-top:24px" hidden>
+          <summary><span>Status sumber umpan</span></summary>
+          <div class="body"><div id="sumberList"></div></div>
+        </details>
+      </div>
+    </div>
+
+    <article id="postView" hidden>
+      <a class="btn btn-outline btn-sm" href="berita.html" style="margin-bottom:22px">← Semua berita</a>
+      <div class="post-head">
+        <div class="post-meta" id="postMeta"></div>
+        <h1 id="postTitle" style="font-size:clamp(1.6rem,1.2rem+1.8vw,2.4rem)"></h1>
+        <p class="lead" id="postLead"></p>
+      </div>
+      <div class="post-body ref-scan" id="postBody"></div>
+      <div id="postDebat"></div>
+      <div id="postSources"></div>
+      <div id="postRelated"></div>
+      <div class="pager"><a href="berita.html"><span>Kembali</span><b>← Semua berita</b></a></div>
+    </article>
+
+  </div>
+</section>
+
+<!--SCRIPTS-->
+<script src="assets/js/mdmini.js"></script>
+<script src="assets/js/berita.js"></script>
+<script>
+(function(){
+  var N = (window.DRA_BERITA || []).slice().sort(function(a,b){ return (b.d||"").localeCompare(a.d||""); });
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+  var SUBTEMA = {
+    1: "Insentif pajak vs penerimaan negara",
+    2: "Windfall tax & volatilitas geopolitik",
+    3: "Pajak karbon berimbang",
+    4: "Kepatuhan berbasis prediksi digital"
+  };
+  var BULAN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  function tgl(iso){
+    var p = String(iso||"").slice(0,10).split("-");
+    if (p.length !== 3) return "";
+    return parseInt(p[2],10) + " " + BULAN[parseInt(p[1],10)-1] + " " + p[0];
+  }
+  function sejak(iso){
+    if (!iso) return "";
+    var j = (Date.now() - new Date(iso)) / 3600000;
+    if (isNaN(j)) return "";
+    if (j < 1) return "beberapa menit lalu";
+    if (j < 24) return Math.round(j) + " jam lalu";
+    var h = Math.round(j/24);
+    return h + " hari lalu";
+  }
+
+  var tags = [];
+  N.forEach(function(n){ (n.k||[]).forEach(function(t){ if(tags.indexOf(t)<0) tags.push(t); }); });
+  var tagAktif = "Semua", subAktif = "Semua", kanal = "kurasi";
+
+  function barSubtema(el, onPick, aktif){
+    el.innerHTML = "";
+    var opsi = ["Semua"].concat(Object.keys(SUBTEMA));
+    opsi.forEach(function(s){
+      var b = document.createElement("button");
+      b.className = "chip" + (String(aktif)===String(s) ? " on" : "");
+      b.textContent = s === "Semua" ? "Semua subtema" : "Subtema " + s + " · " + SUBTEMA[s];
+      b.onclick = function(){ onPick(s); };
+      el.appendChild(b);
+    });
+  }
+
+  function drawTags(){
+    var bar = $("tagBar"); bar.innerHTML = "";
+    ["Semua"].concat(tags).forEach(function(t){
+      var b = document.createElement("button");
+      b.className = "chip" + (t===tagAktif ? " on" : "");
+      b.textContent = t;
+      b.onclick = function(){ tagAktif = t; drawTags(); drawList(); };
+      bar.appendChild(b);
+    });
+  }
+
+  function drawList(){
+    var items = N.filter(function(n){
+      if (tagAktif !== "Semua" && (n.k||[]).indexOf(tagAktif) < 0) return false;
+      if (subAktif !== "Semua" && String(n.sub||"") !== String(subAktif)) return false;
+      return true;
+    });
+    $("emptyNews").hidden = items.length > 0;
+    $("newsList").innerHTML = items.map(function(n, i){
+      return '<a class="news-card' + (i===0 && tagAktif==="Semua" && subAktif==="Semua" ? " news-lead" : "") + '" href="berita.html#' + esc(n.id) + '">' +
+        '<div class="news-date">' + esc(tgl(n.d)) + "</div>" +
+        "<h3>" + esc(n.t) + "</h3>" +
+        "<p>" + esc(n.r) + "</p>" +
+        '<div class="meta">' +
+          (n.sub ? '<span class="tag tag-gold">Subtema ' + n.sub + "</span>" : "") +
+          (n.deb ? '<span class="tag tag-green">Ada bahan debat</span>' : "") +
+          (n.k||[]).map(function(t){ return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
+        "</div></a>";
+    }).join("");
+  }
+
+  var MODUL = {
+    "kup.html":"Modul 01 — KUP", "pph-badan.html":"Modul 02 — PPh Badan", "pph-op.html":"Modul 03 — PPh OP & PPh 21",
+    "potput.html":"Modul 04 — Potput", "ppn.html":"Modul 05 — PPN & PPnBM", "bea-meterai.html":"Modul 06 — Bea Meterai",
+    "pdrd.html":"Modul 07 — Pajak Daerah", "akuntansi-pajak.html":"Modul 08 — Akuntansi Pajak",
+    "perencanaan-pajak.html":"Modul 09 — Perencanaan Pajak", "lomba.html":"Info Lomba"
+  };
+
+  function blokDebat(n){
+    var d = n.deb;
+    if (!d) return "";
+    function li(arr){ return (arr||[]).map(function(x){ return "<li>" + esc(x) + "</li>"; }).join(""); }
+    return '<div class="debat-box ref-scan">' +
+      '<div class="debat-head"><h3>Bahan debat</h3>' +
+        (n.sub ? '<span class="tag tag-gold">Subtema ' + n.sub + " · " + esc(SUBTEMA[n.sub]||"") + "</span>" : "") + "</div>" +
+      '<div class="debat-grid">' +
+        '<div class="debat-col pro"><h4>Arah pro</h4><ul>' + li(d.pro) + "</ul></div>" +
+        '<div class="debat-col kontra"><h4>Arah kontra</h4><ul>' + li(d.kontra) + "</ul></div>" +
+      "</div>" +
+      (d.data && d.data.length ? "<h4>Data yang bisa dikutip</h4><ul>" + li(d.data) + "</ul>" : "") +
+      (d.aturan && d.aturan.length ? '<h4>Aturan terkait</h4><p>' + d.aturan.map(esc).join(" · ") + "</p>" : "") +
+      (d.kalimat ? '<h4>Kalimat siap pakai (±20 detik)</h4><blockquote>' + esc(d.kalimat) + "</blockquote>" : "") +
+      (d.warn ? '<div class="callout warn" style="margin-bottom:0"><h4>Peringatan pemakaian</h4><p style="margin-bottom:0">' + esc(d.warn) + "</p></div>" : "") +
+    "</div>";
+  }
+
+  function drawPost(n){
+    $("listView").hidden = true;
+    $("postView").hidden = false;
+    $("postMeta").innerHTML = '<span class="news-date">' + esc(tgl(n.d)) + "</span>" +
+      (n.sub ? '<span class="tag tag-gold">Subtema ' + n.sub + "</span>" : "") +
+      (n.k||[]).map(function(t){ return '<span class="tag">' + esc(t) + "</span>"; }).join("");
+    $("postTitle").textContent = n.t;
+    $("postLead").textContent = n.r || "";
+    $("postBody").innerHTML = window.DRA_MD(n.isi || "");
+    $("postDebat").innerHTML = blokDebat(n);
+    $("postSources").innerHTML = (n.s && n.s.length)
+      ? '<div class="callout"><h4>Sumber</h4><ul style="margin-bottom:0">' + n.s.map(function(s){
+          return '<li><a href="' + esc(s.u) + '" target="_blank" rel="noopener">' + esc(s.n) + " ↗</a></li>";
+        }).join("") + "</ul></div>"
+      : "";
+    $("postRelated").innerHTML = (n.rel && n.rel.length)
+      ? '<div class="callout ok"><h4>Materi terkait</h4><p style="margin-bottom:0">' + n.rel.map(function(r){
+          return '<a href="' + esc(r) + '">' + esc(MODUL[r] || r) + "</a>";
+        }).join(" · ") + "</p></div>"
+      : "";
+    if (window.DRA_REF) { window.DRA_REF.link($("postBody")); window.DRA_REF.link($("postDebat")); }
+    document.title = n.t + " — DRA Tax Hub";
+  }
+
+  /* ---------- Umpan otomatis ---------- */
+  var feed = null, subFeed = "Semua";
+
+  function drawFeed(){
+    if (!feed) return;
+    var items = (feed.items||[]).filter(function(it){
+      return subFeed === "Semua" || String(it.sub||"") === String(subFeed);
+    });
+    var hidup = (feed.sumber||[]).filter(function(s){ return s.ok; }).length;
+
+    if (!feed.items || !feed.items.length) {
+      $("feedStatus").innerHTML = "Umpan otomatis belum berisi apa pun. Ini normal kalau situs masih diunggah dengan cara seret-dan-lepas — pengambilan berita berjalan lewat GitHub Actions. Panduannya ada di <code>PANDUAN-GITHUB.md</code> di dalam folder situs.";
+      $("feedList").innerHTML = "";
+    } else {
+      $("feedStatus").innerHTML = "Diperbarui " + esc(sejak(feed.diperbarui)) + " · " + feed.items.length +
+        " judul dari " + hidup + " sumber hidup · menampilkan " + items.length + ".";
+      $("feedList").innerHTML = items.map(function(it){
+        var q = "?dari=umpan&judul=" + encodeURIComponent(it.t) +
+                "&url=" + encodeURIComponent(it.u) +
+                "&sumber=" + encodeURIComponent(it.p || "") +
+                (it.sub ? "&sub=" + it.sub : "");
+        return '<div class="feed-item">' +
+          '<div class="feed-main">' +
+            '<a class="feed-title" href="' + esc(it.u) + '" target="_blank" rel="noopener">' + esc(it.t) + " ↗</a>" +
+            (it.r ? '<p class="feed-snip">' + esc(it.r) + "</p>" : "") +
+            '<div class="feed-meta"><span class="tag">' + esc(it.p || "—") + "</span>" +
+              (it.d ? '<span class="hint">' + esc(sejak(it.d)) + "</span>" : "") +
+              (it.sub ? '<span class="tag tag-gold">Subtema ' + it.sub + "</span>" : "") +
+            "</div>" +
+          "</div>" +
+          '<a class="btn btn-outline btn-sm" href="tulis-berita.html' + q + '">Jadikan bahan debat →</a>' +
+        "</div>";
+      }).join("") || '<p class="lead">Tidak ada judul untuk subtema ini.</p>';
+    }
+
+    if (feed.sumber && feed.sumber.length) {
+      $("sumberBox").hidden = false;
+      $("sumberList").innerHTML = '<div class="table-wrap"><table><thead><tr><th>Sumber</th><th>Status</th><th>Item</th></tr></thead><tbody>' +
+        feed.sumber.map(function(s){
+          return "<tr><td>" + esc(s.nama) + "</td><td>" +
+            (s.ok ? '<span class="tag tag-green">hidup</span>' : '<span class="tag tag-red">' + esc(s.error||"gagal") + "</span>") +
+            "</td><td>" + (s.jumlah||0) + "</td></tr>";
+        }).join("") + "</tbody></table></div>" +
+        '<p class="hint">Sumber yang terus gagal tinggal dihapus dari daftar di <code>scripts/fetch-news.mjs</code>.</p>';
+    }
+  }
+
+  function muatFeed(){
+    fetch("assets/data/feed.json", { cache: "no-store" })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        feed = d || { items: [], sumber: [] };
+        drawFeed();
+      })
+      .catch(function(){
+        feed = { items: [], sumber: [] };
+        $("feedStatus").textContent = "File umpan belum ada (assets/data/feed.json). Kanal ini akan terisi begitu GitHub Actions berjalan.";
+      });
+  }
+
+  function setKanal(k){
+    kanal = k;
+    $("tabKurasi").classList.toggle("on", k==="kurasi");
+    $("tabUmpan").classList.toggle("on", k==="umpan");
+    $("panelKurasi").hidden = k !== "kurasi";
+    $("panelUmpan").hidden = k !== "umpan";
+    if (k === "umpan" && !feed) muatFeed();
+  }
+
+  $("tabKurasi").onclick = function(){ setKanal("kurasi"); };
+  $("tabUmpan").onclick = function(){ setKanal("umpan"); };
+
+  function pilihSub(s){ subAktif = s; barSubtema($("subBar"), pilihSub, subAktif); drawList(); }
+  function pilihSubFeed(s){ subFeed = s; barSubtema($("subBarFeed"), pilihSubFeed, subFeed); drawFeed(); }
+
+  function route(){
+    var id = location.hash.replace(/^#/, "");
+    var n = id ? N.filter(function(x){ return x.id === id; })[0] : null;
+    if (n) { drawPost(n); window.scrollTo(0,0); }
+    else {
+      $("postView").hidden = true;
+      $("listView").hidden = false;
+      barSubtema($("subBar"), pilihSub, subAktif);
+      barSubtema($("subBarFeed"), pilihSubFeed, subFeed);
+      drawTags(); drawList();
+    }
+  }
+
+  window.addEventListener("hashchange", route);
+  route();
+  if (new URLSearchParams(location.search).get("kanal") === "umpan") setKanal("umpan");
+})();
+</script>

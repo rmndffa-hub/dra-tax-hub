@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Progres Belajar</title>
+<meta name="description" content="Centang modul yang dikuasai dan pantau akurasi per topik dari riwayat latihan.">
+<meta property="og:title" content="Progres Belajar">
+<meta property="og:description" content="Centang modul yang dikuasai dan pantau akurasi per topik dari riwayat latihan.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('dra-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="pill">Amazing Tax 2026</span>
+    <p>Materi ini disusun untuk persiapan Tax Competition UI 2026 — penyisihan 10 Okt, final 6 Nov.</p>
+    <a href="lomba.html">Lihat aturan lombanya →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Logo DRA Consulting">
+      <span class="brand-txt"><b>DRA Tax Hub</b><span>Tax &amp; Financial Solutions</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Beranda</a><a href="materi.html">Materi</a><div class="nav-drop"><button type="button" class="nav-drop-btn active" aria-expanded="false">Latihan<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kuis.html">Latihan Kuis</a><a href="ujian.html">Mode Ujian</a><a href="bank-soal.html">Bank Soal</a><a href="progres.html" class="active">Progres Belajar</a></div></div><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Alat<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kalkulator.html">Kalkulator Pajak</a><a href="referensi.html">Aturan & Istilah</a></div></div><a href="berita.html">Berita</a><a href="lomba.html">Info Lomba</a></nav>
+    <div class="nav-right">
+      <button class="search-trigger" id="searchTrigger" aria-label="Cari materi">
+        <span class="st-ico" aria-hidden="true">🔍</span><span class="st-label">Cari materi…</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Progres</div>
+    <span class="eyebrow">Pelacak belajar</span>
+    <h1>Progres Belajar</h1>
+    <p class="lead">Centang modul yang sudah benar-benar dikuasai, dan biarkan riwayat skor menunjukkan topik mana yang masih bocor. Semua tersimpan di browser ini saja — tidak dikirim ke mana pun.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+
+    <div class="stat-row" style="margin-bottom:34px">
+      <div class="stat"><b id="sModul">0/9</b><span>modul dikuasai</span></div>
+      <div class="stat"><b id="sLatihan">0</b><span>latihan dikerjakan</span></div>
+      <div class="stat"><b id="sTerbaik">—</b><span>skor terbaik</span></div>
+      <div class="stat"><b id="sRata">—</b><span>rata-rata 5 terakhir</span></div>
+    </div>
+
+    <div class="grid grid-2" style="gap:24px;align-items:start">
+      <div class="q-card">
+        <h3 style="margin-top:0">Modul yang sudah dikuasai</h3>
+        <p class="hint">Centang sesudah kamu bisa menulis ulang jangkarnya dari kertas kosong — bukan sesudah sekadar membacanya.</p>
+        <div id="modulList" class="modul-list"></div>
+      </div>
+
+      <div class="q-card">
+        <h3 style="margin-top:0">Riwayat skor</h3>
+        <p class="hint">Persentase terhadap skor sempurna, latihan terbaru di kanan.</p>
+        <div id="chart"></div>
+        <div id="riwayat"></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:38px">Akurasi per topik</h3>
+    <p class="lead" style="font-size:.95rem">Dihitung dari seluruh riwayat kuis dan ujian di browser ini. Urut dari yang paling lemah.</p>
+    <div class="table-wrap"><table id="tabelTopik"></table></div>
+    <p id="belum" class="lead" hidden>Belum ada data. Kerjakan <a href="kuis.html">kuis</a> atau <a href="ujian.html">mode ujian</a> dulu, hasilnya otomatis tercatat di sini.</p>
+
+    <div class="callout warn" style="margin-top:34px">
+      <h4>Menghapus data</h4>
+      <p>Data progres disimpan di penyimpanan browser ini. Membuka situs dari perangkat atau browser lain berarti mulai dari nol.</p>
+      <button class="btn btn-outline btn-sm" id="reset" style="margin-bottom:0">Hapus semua progres</button>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-lock">
+          <span class="fb-plate"><img src="assets/img/logo-mark.png" alt="Logo DRA Consulting"></span>
+          <span class="fb-txt"><b>DRA Consulting</b><span>Tax &amp; Financial Solutions</span></span>
+        </div>
+        <p>Pusat materi perpajakan Indonesia. Disusun ulang dari catatan belajar agar bisa dibaca siapa saja, gratis.</p>
+      </div>
+      <div>
+        <h5>Materi</h5>
+        <a href="kup.html">01 · KUP</a>
+        <a href="pph-badan.html">02 · PPh Badan</a>
+        <a href="pph-op.html">03 · PPh OP &amp; PPh 21</a>
+        <a href="potput.html">04 · Potput PPh</a>
+        <a href="ppn.html">05 · PPN &amp; PPnBM</a>
+        <a href="bea-meterai.html">06 · Bea Meterai</a>
+        <a href="pdrd.html">07 · Pajak Daerah</a>
+        <a href="akuntansi-pajak.html">08 · Akuntansi Pajak</a>
+        <a href="perencanaan-pajak.html">09 · Perencanaan Pajak</a>
+      </div>
+      <div>
+        <h5>Latihan</h5>
+        <a href="kuis.html">Latihan Kuis</a>
+        <a href="ujian.html">Mode Ujian</a>
+        <a href="bank-soal.html">Bank Soal</a>
+        <a href="progres.html">Progres Belajar</a>
+      </div>
+      <div>
+        <h5>Alat &amp; Info</h5>
+        <a href="kalkulator.html">Kalkulator Pajak</a>
+        <a href="referensi.html">Aturan &amp; Istilah</a>
+        <a href="berita.html">Berita</a>
+        <a href="tulis-berita.html">Tulis Berita</a>
+        <a href="lomba.html">Info Lomba</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DRA Consulting. Materi untuk keperluan belajar.</span>
+      <span>Dasar hukum per September 2026 — selalu cek peraturan terbaru sebelum dipakai untuk pekerjaan nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="searchModal" hidden>
+  <div class="modal-box" role="dialog" aria-label="Pencarian materi">
+    <input id="searchInput" type="search" placeholder="Cari tarif, istilah, atau aturan…" autocomplete="off">
+    <div class="results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/referensi.js"></script>
+<script src="assets/js/progres-store.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ref.js"></script>
+<script src="assets/js/soal.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  var MODUL = [
+    ["kup.html","01 · KUP"],["pph-badan.html","02 · PPh Badan"],["pph-op.html","03 · PPh OP & PPh 21"],
+    ["potput.html","04 · Potput PPh"],["ppn.html","05 · PPN & PPnBM"],["bea-meterai.html","06 · Bea Meterai"],
+    ["pdrd.html","07 · Pajak Daerah"],["akuntansi-pajak.html","08 · Akuntansi Pajak"],["perencanaan-pajak.html","09 · Perencanaan Pajak"]
+  ];
+  var TOPIK_MODUL = {
+    "KUP":"kup.html","PPh Badan":"pph-badan.html","PPh OP":"pph-op.html","Potput":"potput.html",
+    "PPN":"ppn.html","Bea Meterai":"bea-meterai.html","PDRD":"pdrd.html","Akuntansi Pajak":"akuntansi-pajak.html",
+    "Perencanaan Pajak":"perencanaan-pajak.html"
+  };
+
+  function render(){
+    var d = window.DRA_STORE.load();
+
+    // modul
+    var done = MODUL.filter(function(m){ return d.modul[m[0]]; }).length;
+    $("sModul").textContent = done + "/" + MODUL.length;
+    $("modulList").innerHTML = MODUL.map(function(m){
+      return '<label class="check modul-row"><input type="checkbox" data-slug="' + m[0] + '"' + (d.modul[m[0]] ? " checked" : "") + '>' +
+        '<span>' + esc(m[1]) + "</span>" +
+        '<a href="' + m[0] + '" class="tag">buka</a></label>';
+    }).join("");
+
+    // statistik
+    var runs = d.runs.slice();
+    $("sLatihan").textContent = runs.length;
+    if (runs.length) {
+      var persen = runs.map(function(r){ return Math.max(0, Math.round(r.score / r.max * 100)); });
+      $("sTerbaik").textContent = Math.max.apply(null, persen) + "%";
+      var last5 = persen.slice(-5);
+      $("sRata").textContent = Math.round(last5.reduce(function(a,b){ return a+b; },0) / last5.length) + "%";
+    } else {
+      $("sTerbaik").textContent = "—"; $("sRata").textContent = "—";
+    }
+
+    // grafik
+    var show = runs.slice(-12);
+    if (show.length) {
+      var w = 100, h = 46, gap = 2.2;
+      var bw = (w - gap * (show.length - 1)) / show.length;
+      var bars = show.map(function(r, i){
+        var p = Math.max(0, Math.min(100, Math.round(r.score / r.max * 100)));
+        var bh = Math.max(1.5, p / 100 * (h - 10));
+        var x = i * (bw + gap);
+        var warna = p >= 80 ? "var(--green)" : (p >= 50 ? "var(--gold)" : "var(--navy-600)");
+        return '<rect x="' + x.toFixed(2) + '" y="' + (h - bh).toFixed(2) + '" width="' + bw.toFixed(2) + '" height="' + bh.toFixed(2) + '" rx="1" fill="' + warna + '"><title>' + p + '% · ' + (r.mode==="ujian"?"ujian":"kuis") + ' ' + r.n + ' soal</title></rect>' +
+               '<text x="' + (x + bw/2).toFixed(2) + '" y="' + (h - bh - 1.6).toFixed(2) + '" text-anchor="middle" font-size="3.1" fill="var(--muted)">' + p + "</text>";
+      }).join("");
+      $("chart").innerHTML = '<svg viewBox="0 0 100 ' + h + '" class="mini-chart" role="img" aria-label="Riwayat skor">' + bars + "</svg>";
+      $("riwayat").innerHTML = show.slice().reverse().slice(0,5).map(function(r){
+        var tgl = new Date(r.ts);
+        return '<div class="mini-row"><span class="k">' + tgl.toLocaleDateString("id-ID",{day:"numeric",month:"short"}) + " · " +
+          (r.mode === "ujian" ? "Ujian" : "Kuis") + " " + r.n + ' soal</span><span class="v">' + r.score + "/" + r.max + "</span></div>";
+      }).join("");
+    } else {
+      $("chart").innerHTML = '<p class="hint">Grafik muncul setelah latihan pertama.</p>';
+      $("riwayat").innerHTML = "";
+    }
+
+    // per topik
+    var per = window.DRA_STORE.perTopik();
+    var keys = Object.keys(per);
+    $("belum").hidden = keys.length > 0;
+    if (keys.length) {
+      keys.sort(function(a,b){
+        var na = per[a].r+per[a].w+per[a].s, nb = per[b].r+per[b].w+per[b].s;
+        return (per[a].r/na) - (per[b].r/nb);
+      });
+      $("tabelTopik").innerHTML = "<thead><tr><th>Topik</th><th>Dikerjakan</th><th>Benar</th><th>Akurasi</th><th>Tindakan</th></tr></thead><tbody>" +
+        keys.map(function(t){
+          var d2 = per[t], n = d2.r + d2.w + d2.s, ak = Math.round(d2.r/n*100);
+          var warna = ak >= 80 ? "tag-green" : (ak >= 50 ? "tag-gold" : "tag-red");
+          return "<tr><td>" + esc(t) + "</td><td>" + n + "</td><td>" + d2.r + "</td>" +
+            '<td><span class="tag ' + warna + '">' + ak + "%</span></td>" +
+            '<td><a href="kuis.html?topik=' + encodeURIComponent(t) + '">latih</a>' +
+            (TOPIK_MODUL[t] ? ' · <a href="' + TOPIK_MODUL[t] + '">materi</a>' : "") + "</td></tr>";
+        }).join("") + "</tbody>";
+    } else {
+      $("tabelTopik").innerHTML = "";
+    }
+  }
+
+  $("modulList").addEventListener("change", function(e){
+    var c = e.target.closest("input[data-slug]");
+    if (!c) return;
+    window.DRA_STORE.toggleModul(c.getAttribute("data-slug"));
+    render();
+  });
+
+  $("reset").onclick = function(){
+    if (confirm("Hapus seluruh centang modul dan riwayat skor di browser ini?")) {
+      window.DRA_STORE.reset(); render();
+    }
+  };
+
+  render();
+})();
+</script>
+</body>
+</html>

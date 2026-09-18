@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tulis Berita Baru</title>
+<meta name="description" content="Editor untuk menambah artikel ke portal berita, menghasilkan file berita.js siap timpa.">
+<meta property="og:title" content="Tulis Berita Baru">
+<meta property="og:description" content="Editor untuk menambah artikel ke portal berita, menghasilkan file berita.js siap timpa.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('dra-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="pill">Amazing Tax 2026</span>
+    <p>Materi ini disusun untuk persiapan Tax Competition UI 2026 — penyisihan 10 Okt, final 6 Nov.</p>
+    <a href="lomba.html">Lihat aturan lombanya →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Logo DRA Consulting">
+      <span class="brand-txt"><b>DRA Tax Hub</b><span>Tax &amp; Financial Solutions</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Beranda</a><a href="materi.html">Materi</a><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Latihan<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kuis.html">Latihan Kuis</a><a href="ujian.html">Mode Ujian</a><a href="bank-soal.html">Bank Soal</a><a href="progres.html">Progres Belajar</a></div></div><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Alat<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kalkulator.html">Kalkulator Pajak</a><a href="referensi.html">Aturan & Istilah</a></div></div><a href="berita.html" class="active">Berita</a><a href="lomba.html">Info Lomba</a></nav>
+    <div class="nav-right">
+      <button class="search-trigger" id="searchTrigger" aria-label="Cari materi">
+        <span class="st-ico" aria-hidden="true">🔍</span><span class="st-label">Cari materi…</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / <a href="berita.html">Berita</a> / Tulis</div>
+    <span class="eyebrow">Editor</span>
+    <h1>Tulis Berita Baru</h1>
+    <p class="lead">Isi formulirnya, lihat pratinjaunya, lalu unduh <code>berita.js</code> yang sudah berisi artikel baru + semua artikel lama. Timpa file lamanya, unggah ulang ke Netlify, selesai.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+
+    <div class="callout" style="margin-bottom:28px">
+      <h4>Empat langkah</h4>
+      <ol style="margin-bottom:0">
+        <li>Isi formulir di bawah — pratinjau di sebelahnya berubah otomatis.</li>
+        <li>Klik <b>Unduh berita.js</b>. File berisi artikel barumu di urutan paling atas plus seluruh artikel lama.</li>
+        <li>Di folder situsmu, timpa <code>assets/js/berita.js</code> dengan file yang baru diunduh.</li>
+        <li>Seret ulang seluruh folder ke <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">app.netlify.com/drop</a> — atau ke situs Netlify yang sudah ada lewat menu <i>Deploys</i>.</li>
+      </ol>
+    </div>
+
+    <div class="editor-grid">
+      <form id="form" autocomplete="off">
+        <label for="f-judul">Judul</label>
+        <input id="f-judul" type="text" placeholder="PMK baru terbit: apa yang berubah">
+
+        <div class="two-col">
+          <div>
+            <label for="f-tanggal">Tanggal</label>
+            <input id="f-tanggal" type="date">
+          </div>
+          <div>
+            <label for="f-tag">Tag <span class="hint">pisahkan dengan koma</span></label>
+            <input id="f-tag" type="text" placeholder="Coretax, KUP">
+          </div>
+        </div>
+
+        <label for="f-sub">Subtema lomba</label>
+        <select id="f-sub">
+          <option value="">— tidak terkait subtema —</option>
+          <option value="1">Subtema 1 · Insentif pajak vs penerimaan negara</option>
+          <option value="2">Subtema 2 · Windfall tax &amp; volatilitas geopolitik</option>
+          <option value="3">Subtema 3 · Pajak karbon berimbang</option>
+          <option value="4">Subtema 4 · Kepatuhan berbasis prediksi digital</option>
+        </select>
+
+        <label for="f-ringkas">Ringkasan <span class="hint">1–2 kalimat, muncul di kartu daftar berita</span></label>
+        <textarea id="f-ringkas" rows="3" placeholder="Inti beritanya dalam dua kalimat."></textarea>
+
+        <label for="f-isi">Isi artikel</label>
+        <p class="hint" style="margin:0 0 8px">
+          <code>## Subjudul</code> · <code>- poin</code> · <code>&gt; kutipan</code> · <code>**tebal**</code> · <code>*miring*</code> · <code>[teks](https://…)</code> · baris kosong = paragraf baru
+        </p>
+        <textarea id="f-isi" rows="16" placeholder="Paragraf pembuka.&#10;&#10;## Yang berubah&#10;&#10;- Poin pertama&#10;- Poin kedua&#10;&#10;## Kenapa penting untuk lomba&#10;&#10;Penjelasan."></textarea>
+
+        <label for="f-sumber">Sumber <span class="hint">satu baris satu sumber, format: Nama sumber | https://alamat</span></label>
+        <textarea id="f-sumber" rows="3" placeholder="DDTCNews — Judul beritanya | https://news.ddtc.co.id/..."></textarea>
+
+        <label>Materi terkait</label>
+        <div class="check-grid" id="f-rel"></div>
+
+        <h3 style="margin:34px 0 4px">Bahan debat</h3>
+        <p class="hint" style="margin:0 0 6px">Boleh dikosongkan, tapi inilah yang mengubah berita menjadi amunisi final. Satu baris satu poin.</p>
+
+        <label for="f-pro">Arah pro</label>
+        <textarea id="f-pro" rows="4" placeholder="Penyampaian dokumen seketika dan murah.&#10;Wajib pajak bisa mengoreksi lebih awal."></textarea>
+
+        <label for="f-kontra">Arah kontra</label>
+        <textarea id="f-kontra" rows="4" placeholder="Beban pemberitahuan bergeser ke wajib pajak.&#10;Kesenjangan digital memukul UMKM."></textarea>
+
+        <label for="f-data">Data yang bisa dikutip <span class="hint">angka, tanggal, kutipan pejabat</span></label>
+        <textarea id="f-data" rows="3" placeholder="Imbauan DJP, 12 September 2026.&#10;Tenggat keberatan 3 bulan sejak dikirim."></textarea>
+
+        <label for="f-aturan">Aturan terkait <span class="hint">pisahkan dengan koma — otomatis jadi tombol popup</span></label>
+        <input id="f-aturan" type="text" placeholder="PMK 81/2024, UU KUP">
+
+        <label for="f-kalimat">Kalimat siap pakai <span class="hint">±20 detik, untuk pembicara 3</span></label>
+        <textarea id="f-kalimat" rows="4" placeholder="September 2026 DJP mengimbau…"></textarea>
+
+        <label for="f-warn">Peringatan pemakaian <span class="hint">apa yang bisa dipakai lawan untuk mematahkan</span></label>
+        <textarea id="f-warn" rows="2" placeholder="Sebut sebagai imbauan, bukan kewajiban hukum baru."></textarea>
+      </form>
+
+      <div class="preview-wrap">
+          <div class="preview-label">Pratinjau</div>
+          <div class="post-head">
+            <div class="post-meta" id="p-meta"></div>
+            <h2 id="p-judul" style="margin-top:6px">Judul berita akan muncul di sini</h2>
+            <p class="lead" id="p-ringkas" style="font-size:1rem"></p>
+          </div>
+          <div class="post-body" id="p-isi"></div>
+          <div id="p-debat"></div>
+          <div id="p-sumber"></div>
+      </div>
+    </div>
+
+    <div class="q-card" style="margin-top:34px">
+      <h3 style="margin-top:0">Simpan hasilnya</h3>
+      <div class="q-actions" style="margin-top:0;margin-bottom:18px">
+        <button class="btn btn-primary" id="dlBtn" type="button">⬇ Unduh berita.js</button>
+        <button class="btn btn-outline" id="copyBtn" type="button">Salin kode entri</button>
+        <span id="copyMsg" class="tag tag-green" hidden>Tersalin</span>
+      </div>
+      <p class="hint" style="margin-top:0">Kalau tombol unduh diblokir (misalnya saat situs dibuka lewat tautan pratinjau), pakai tombol salin lalu tempelkan kode di bawah ini ke dalam <code>assets/js/berita.js</code>, tepat setelah baris <code>window.DRA_BERITA = [</code>.</p>
+      <textarea id="out" rows="12" readonly class="code-out"></textarea>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-lock">
+          <span class="fb-plate"><img src="assets/img/logo-mark.png" alt="Logo DRA Consulting"></span>
+          <span class="fb-txt"><b>DRA Consulting</b><span>Tax &amp; Financial Solutions</span></span>
+        </div>
+        <p>Pusat materi perpajakan Indonesia. Disusun ulang dari catatan belajar agar bisa dibaca siapa saja, gratis.</p>
+      </div>
+      <div>
+        <h5>Materi</h5>
+        <a href="kup.html">01 · KUP</a>
+        <a href="pph-badan.html">02 · PPh Badan</a>
+        <a href="pph-op.html">03 · PPh OP &amp; PPh 21</a>
+        <a href="potput.html">04 · Potput PPh</a>
+        <a href="ppn.html">05 · PPN &amp; PPnBM</a>
+        <a href="bea-meterai.html">06 · Bea Meterai</a>
+        <a href="pdrd.html">07 · Pajak Daerah</a>
+        <a href="akuntansi-pajak.html">08 · Akuntansi Pajak</a>
+        <a href="perencanaan-pajak.html">09 · Perencanaan Pajak</a>
+      </div>
+      <div>
+        <h5>Latihan</h5>
+        <a href="kuis.html">Latihan Kuis</a>
+        <a href="ujian.html">Mode Ujian</a>
+        <a href="bank-soal.html">Bank Soal</a>
+        <a href="progres.html">Progres Belajar</a>
+      </div>
+      <div>
+        <h5>Alat &amp; Info</h5>
+        <a href="kalkulator.html">Kalkulator Pajak</a>
+        <a href="referensi.html">Aturan &amp; Istilah</a>
+        <a href="berita.html">Berita</a>
+        <a href="tulis-berita.html">Tulis Berita</a>
+        <a href="lomba.html">Info Lomba</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DRA Consulting. Materi untuk keperluan belajar.</span>
+      <span>Dasar hukum per September 2026 — selalu cek peraturan terbaru sebelum dipakai untuk pekerjaan nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="searchModal" hidden>
+  <div class="modal-box" role="dialog" aria-label="Pencarian materi">
+    <input id="searchInput" type="search" placeholder="Cari tarif, istilah, atau aturan…" autocomplete="off">
+    <div class="results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/referensi.js"></script>
+<script src="assets/js/progres-store.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ref.js"></script>
+<script src="assets/js/mdmini.js"></script>
+<script src="assets/js/berita.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var MODUL = [
+    ["kup.html","Modul 01 — KUP"],["pph-badan.html","Modul 02 — PPh Badan"],["pph-op.html","Modul 03 — PPh OP & PPh 21"],
+    ["potput.html","Modul 04 — Potput"],["ppn.html","Modul 05 — PPN & PPnBM"],["bea-meterai.html","Modul 06 — Bea Meterai"],
+    ["pdrd.html","Modul 07 — Pajak Daerah"],["akuntansi-pajak.html","Modul 08 — Akuntansi Pajak"],
+    ["perencanaan-pajak.html","Modul 09 — Perencanaan Pajak"],["lomba.html","Info Lomba"]
+  ];
+  var BULAN = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  function tgl(iso){
+    var p = String(iso||"").split("-");
+    if (p.length !== 3) return "";
+    return parseInt(p[2],10) + " " + BULAN[parseInt(p[1],10)-1] + " " + p[0];
+  }
+  function slug(s){
+    return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,60) || "berita-baru";
+  }
+
+  // tanggal default = hari ini
+  var now = new Date();
+  $("f-tanggal").value = now.getFullYear() + "-" + ("0"+(now.getMonth()+1)).slice(-2) + "-" + ("0"+now.getDate()).slice(-2);
+
+  // checkbox materi
+  $("f-rel").innerHTML = MODUL.map(function(m, i){
+    return '<label class="check"><input type="checkbox" value="' + m[0] + '" id="rel'+i+'"> ' + esc(m[1]) + "</label>";
+  }).join("");
+
+  function data(){
+    var tags = $("f-tag").value.split(",").map(function(s){ return s.trim(); }).filter(Boolean);
+    var sumber = $("f-sumber").value.split("\n").map(function(l){
+      var p = l.split("|");
+      if (!l.trim()) return null;
+      return { n: (p[0]||"").trim(), u: (p[1]||"").trim() };
+    }).filter(Boolean);
+    var rel = Array.prototype.slice.call($("f-rel").querySelectorAll("input:checked")).map(function(c){ return c.value; });
+    function baris(id){
+      return $(id).value.split("\n").map(function(s){ return s.trim(); }).filter(Boolean);
+    }
+    var deb = {
+      pro: baris("f-pro"),
+      kontra: baris("f-kontra"),
+      data: baris("f-data"),
+      aturan: $("f-aturan").value.split(",").map(function(s){ return s.trim(); }).filter(Boolean),
+      kalimat: $("f-kalimat").value.trim(),
+      warn: $("f-warn").value.trim()
+    };
+    var adaDebat = deb.pro.length || deb.kontra.length || deb.data.length || deb.aturan.length || deb.kalimat || deb.warn;
+    return {
+      id: slug($("f-judul").value),
+      t: $("f-judul").value.trim(),
+      d: $("f-tanggal").value,
+      k: tags,
+      sub: $("f-sub").value ? parseInt($("f-sub").value, 10) : null,
+      r: $("f-ringkas").value.trim(),
+      isi: $("f-isi").value,
+      s: sumber,
+      rel: rel,
+      deb: adaDebat ? deb : null
+    };
+  }
+
+  function preview(){
+    var n = data();
+    $("p-meta").innerHTML = '<span class="news-date">' + esc(tgl(n.d)) + "</span>" +
+      n.k.map(function(t){ return '<span class="tag">' + esc(t) + "</span>"; }).join("");
+    $("p-judul").textContent = n.t || "Judul berita akan muncul di sini";
+    $("p-ringkas").textContent = n.r;
+    $("p-isi").innerHTML = window.DRA_MD(n.isi);
+    $("p-debat").innerHTML = blokDebat(n);
+    $("p-sumber").innerHTML = n.s.length
+      ? '<div class="callout"><h4>Sumber</h4><ul style="margin-bottom:0">' + n.s.map(function(s){
+          return "<li>" + esc(s.n) + (s.u ? ' <a href="' + esc(s.u) + '" target="_blank" rel="noopener">↗</a>' : "") + "</li>";
+        }).join("") + "</ul></div>"
+      : "";
+    $("out").value = entryCode(n);
+  }
+
+  var SUBTEMA = {
+    1: "Insentif pajak vs penerimaan negara",
+    2: "Windfall tax & volatilitas geopolitik",
+    3: "Pajak karbon berimbang",
+    4: "Kepatuhan berbasis prediksi digital"
+  };
+
+  function blokDebat(n){
+    var d = n.deb;
+    if (!d) return "";
+    function li(arr){ return (arr||[]).map(function(x){ return "<li>" + esc(x) + "</li>"; }).join(""); }
+    return '<div class="debat-box">' +
+      '<div class="debat-head"><h3>Bahan debat</h3>' +
+        (n.sub ? '<span class="tag tag-gold">Subtema ' + n.sub + " · " + esc(SUBTEMA[n.sub]||"") + "</span>" : "") + "</div>" +
+      '<div class="debat-grid">' +
+        '<div class="debat-col pro"><h4>Arah pro</h4><ul>' + li(d.pro) + "</ul></div>" +
+        '<div class="debat-col kontra"><h4>Arah kontra</h4><ul>' + li(d.kontra) + "</ul></div>" +
+      "</div>" +
+      (d.data && d.data.length ? "<h4>Data yang bisa dikutip</h4><ul>" + li(d.data) + "</ul>" : "") +
+      (d.aturan && d.aturan.length ? "<h4>Aturan terkait</h4><p>" + d.aturan.map(esc).join(" · ") + "</p>" : "") +
+      (d.kalimat ? "<h4>Kalimat siap pakai (±20 detik)</h4><blockquote>" + esc(d.kalimat) + "</blockquote>" : "") +
+      (d.warn ? '<div class="callout warn" style="margin-bottom:0"><h4>Peringatan pemakaian</h4><p style="margin-bottom:0">' + esc(d.warn) + "</p></div>" : "") +
+    "</div>";
+  }
+
+  function entryCode(n){
+    var J = JSON.stringify;
+    var out = "{\n" +
+      "  id: " + J(n.id) + ",\n" +
+      "  t: " + J(n.t) + ",\n" +
+      "  d: " + J(n.d) + ",\n" +
+      "  k: " + J(n.k) + ",\n" +
+      (n.sub ? "  sub: " + n.sub + ",\n" : "") +
+      "  r: " + J(n.r) + ",\n" +
+      "  isi: " + J(n.isi) + ",\n" +
+      "  s: [" + n.s.map(function(s){ return "{ n: " + J(s.n) + ", u: " + J(s.u) + " }"; }).join(", ") + "],\n" +
+      "  rel: " + J(n.rel);
+    if (n.deb) {
+      out += ",\n  deb: {\n" +
+        "    pro: " + J(n.deb.pro) + ",\n" +
+        "    kontra: " + J(n.deb.kontra) + ",\n" +
+        "    data: " + J(n.deb.data) + ",\n" +
+        "    aturan: " + J(n.deb.aturan) + ",\n" +
+        "    kalimat: " + J(n.deb.kalimat) + ",\n" +
+        "    warn: " + J(n.deb.warn) + "\n" +
+        "  }";
+    }
+    return out + "\n},";
+  }
+
+  function fullFile(){
+    var baru = data();
+    var lama = (window.DRA_BERITA || []).filter(function(x){ return x.id !== baru.id; });
+    var header =
+"/* Portal berita DRA Tax Hub — data artikel.\n" +
+"   File ini dihasilkan oleh halaman \"Tulis Berita\" pada " + tgl($("f-tanggal").value) + ".\n" +
+"   Timpa assets/js/berita.js dengan file ini, lalu unggah ulang folder situs ke Netlify. */\n\n" +
+"window.DRA_BERITA = [\n\n";
+    var body = [entryCode(baru)].concat(lama.map(function(x){ return entryCode(x); })).join("\n\n");
+    body = body.replace(/,\s*$/, "");
+    return header + body + "\n\n];\n";
+  }
+
+  $("dlBtn").onclick = function(){
+    if (!$("f-judul").value.trim()) { alert("Judulnya diisi dulu ya."); return; }
+    var blob = new Blob([fullFile()], { type: "text/javascript;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = "berita.js";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); }, 1000);
+  };
+
+  $("copyBtn").onclick = function(){
+    var ta = $("out");
+    ta.removeAttribute("readonly");
+    ta.select(); ta.setSelectionRange(0, 99999);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) {}
+    ta.setAttribute("readonly", "readonly");
+    if (navigator.clipboard && !ok) { navigator.clipboard.writeText(ta.value).then(function(){ flash(); }); return; }
+    if (ok) flash();
+  };
+  function flash(){
+    var m = $("copyMsg"); m.hidden = false;
+    setTimeout(function(){ m.hidden = true; }, 1800);
+  }
+
+  /* Isi otomatis kalau datang dari umpan berita */
+  (function(){
+    var q = new URLSearchParams(location.search);
+    if (!q.get("judul")) return;
+    $("f-judul").value = q.get("judul") || "";
+    if (q.get("sub")) $("f-sub").value = q.get("sub");
+    var nama = q.get("sumber") || "";
+    var url = q.get("url") || "";
+    if (url) $("f-sumber").value = (nama ? nama + " | " : "") + url;
+    $("f-ringkas").value = "";
+    $("f-isi").value = "## Apa yang terjadi\n\n\n\n## Kenapa penting untuk lomba\n\n";
+    var b = document.createElement("div");
+    b.className = "callout ok";
+    b.style.marginBottom = "22px";
+    b.innerHTML = "<h4>Diambil dari umpan otomatis</h4><p style='margin-bottom:0'>Judul dan sumbernya sudah terisi. Buka tautan sumbernya, baca, lalu tulis ringkasan dan bahan debatnya dengan kalimatmu sendiri — jangan menyalin isi artikel aslinya." +
+      (url ? ' <a href="' + url.replace(/"/g,"&quot;") + '" target="_blank" rel="noopener">Buka sumber ↗</a>' : "") + "</p>";
+    $("form").parentNode.insertBefore(b, $("form"));
+  })();
+
+  $("form").addEventListener("input", preview);
+  $("form").addEventListener("change", preview);
+  preview();
+})();
+</script>
+</body>
+</html>

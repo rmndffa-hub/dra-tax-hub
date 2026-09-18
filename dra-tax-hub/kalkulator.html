@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kalkulator Pajak</title>
+<meta name="description" content="PPh 21, PPh Badan & 31E, PPN, DER, serta PKB dan opsen — lengkap dengan langkah hitungannya.">
+<meta property="og:title" content="Kalkulator Pajak">
+<meta property="og:description" content="PPh 21, PPh Badan & 31E, PPN, DER, serta PKB dan opsen — lengkap dengan langkah hitungannya.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('dra-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="announce">
+  <div class="wrap">
+    <span class="pill">Amazing Tax 2026</span>
+    <p>Materi ini disusun untuk persiapan Tax Competition UI 2026 — penyisihan 10 Okt, final 6 Nov.</p>
+    <a href="lomba.html">Lihat aturan lombanya →</a>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-mark.png" alt="Logo DRA Consulting">
+      <span class="brand-txt"><b>DRA Tax Hub</b><span>Tax &amp; Financial Solutions</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Beranda</a><a href="materi.html">Materi</a><div class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false">Latihan<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kuis.html">Latihan Kuis</a><a href="ujian.html">Mode Ujian</a><a href="bank-soal.html">Bank Soal</a><a href="progres.html">Progres Belajar</a></div></div><div class="nav-drop"><button type="button" class="nav-drop-btn active" aria-expanded="false">Alat<span class="caret">▾</span></button><div class="nav-drop-menu"><a href="kalkulator.html" class="active">Kalkulator Pajak</a><a href="referensi.html">Aturan & Istilah</a></div></div><a href="berita.html">Berita</a><a href="lomba.html">Info Lomba</a></nav>
+    <div class="nav-right">
+      <button class="search-trigger" id="searchTrigger" aria-label="Cari materi">
+        <span class="st-ico" aria-hidden="true">🔍</span><span class="st-label">Cari materi…</span><kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☾</button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Kalkulator</div>
+    <span class="eyebrow">Alat hitung</span>
+    <h1>Kalkulator Pajak</h1>
+    <p class="lead">Lima hitungan yang paling sering keluar di soal. Hasilnya ditampilkan baris per baris — bukan cuma angka akhir — supaya kamu bisa membandingkan dengan langkah hitunganmu sendiri.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:30px">
+  <div class="wrap">
+    <div class="filter-bar" id="calcTabs" style="margin-bottom:26px"></div>
+
+    <div class="calc-grid">
+      <div class="q-card" id="inputCard"></div>
+      <div class="q-card calc-out" id="outCard">
+        <h3 style="margin-top:0">Hasil</h3>
+        <div id="steps" class="steps-out"></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:28px" id="calcNote"></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-lock">
+          <span class="fb-plate"><img src="assets/img/logo-mark.png" alt="Logo DRA Consulting"></span>
+          <span class="fb-txt"><b>DRA Consulting</b><span>Tax &amp; Financial Solutions</span></span>
+        </div>
+        <p>Pusat materi perpajakan Indonesia. Disusun ulang dari catatan belajar agar bisa dibaca siapa saja, gratis.</p>
+      </div>
+      <div>
+        <h5>Materi</h5>
+        <a href="kup.html">01 · KUP</a>
+        <a href="pph-badan.html">02 · PPh Badan</a>
+        <a href="pph-op.html">03 · PPh OP &amp; PPh 21</a>
+        <a href="potput.html">04 · Potput PPh</a>
+        <a href="ppn.html">05 · PPN &amp; PPnBM</a>
+        <a href="bea-meterai.html">06 · Bea Meterai</a>
+        <a href="pdrd.html">07 · Pajak Daerah</a>
+        <a href="akuntansi-pajak.html">08 · Akuntansi Pajak</a>
+        <a href="perencanaan-pajak.html">09 · Perencanaan Pajak</a>
+      </div>
+      <div>
+        <h5>Latihan</h5>
+        <a href="kuis.html">Latihan Kuis</a>
+        <a href="ujian.html">Mode Ujian</a>
+        <a href="bank-soal.html">Bank Soal</a>
+        <a href="progres.html">Progres Belajar</a>
+      </div>
+      <div>
+        <h5>Alat &amp; Info</h5>
+        <a href="kalkulator.html">Kalkulator Pajak</a>
+        <a href="referensi.html">Aturan &amp; Istilah</a>
+        <a href="berita.html">Berita</a>
+        <a href="tulis-berita.html">Tulis Berita</a>
+        <a href="lomba.html">Info Lomba</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DRA Consulting. Materi untuk keperluan belajar.</span>
+      <span>Dasar hukum per September 2026 — selalu cek peraturan terbaru sebelum dipakai untuk pekerjaan nyata.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="searchModal" hidden>
+  <div class="modal-box" role="dialog" aria-label="Pencarian materi">
+    <input id="searchInput" type="search" placeholder="Cari tarif, istilah, atau aturan…" autocomplete="off">
+    <div class="results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/js/search-index.js"></script>
+<script src="assets/js/referensi.js"></script>
+<script src="assets/js/progres-store.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/ref.js"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function num(v){ var n = parseFloat(String(v==null?"":v).replace(/[^0-9,.-]/g,"").replace(/\.(?=\d{3}\b)/g,"").replace(",",".")); return isFinite(n) ? n : 0; }
+  function rp(n){
+    var neg = n < 0; n = Math.round(Math.abs(n));
+    return (neg ? "−Rp" : "Rp") + n.toLocaleString("id-ID");
+  }
+  function pct(n){ return (Math.round(n*10000)/100).toLocaleString("id-ID") + "%"; }
+  function bulatRibuan(n){ return Math.floor(n/1000)*1000; }
+
+  var PTKP = {"TK/0":54000000,"TK/1":58500000,"TK/2":63000000,"TK/3":67500000,
+              "K/0":58500000,"K/1":63000000,"K/2":67500000,"K/3":72000000};
+
+  function lapisan(pkp){
+    var batas = [60000000, 250000000, 500000000, 5000000000, Infinity];
+    var tarif = [0.05, 0.15, 0.25, 0.30, 0.35];
+    var bawah = 0, sisa = pkp, rows = [], total = 0;
+    for (var i = 0; i < batas.length && sisa > 0; i++) {
+      var lebar = batas[i] - bawah;
+      var kena = Math.min(sisa, lebar);
+      var pajak = kena * tarif[i];
+      rows.push({ l: pct(tarif[i]) + " × " + rp(kena), v: pajak });
+      total += pajak; sisa -= kena; bawah = batas[i];
+    }
+    return { rows: rows, total: total };
+  }
+
+  function row(label, val, kelas){
+    return '<div class="srow ' + (kelas||"") + '"><span>' + label + '</span><b>' + val + "</b></div>";
+  }
+
+  var CALC = {
+    pph21: {
+      nama: "PPh 21 setahun",
+      note: "Memakai prosedur enam baris: bruto → biaya jabatan (maks Rp6 juta) → iuran pensiun → neto → PTKP → tarif Pasal 17 berlapis. Untuk pemotongan bulanan Januari–November, pemberi kerja memakai TER; perhitungan setahun ini yang dipakai di masa Desember dan di soal ujian.",
+      form: function(){
+        return '<h3 style="margin-top:0">PPh Pasal 21 — setahun</h3>' +
+          fld("Gaji per bulan","c1","30000000") +
+          fld("Tunjangan tetap per bulan","c2","0") +
+          fld("THR / bonus setahun","c3","30000000") +
+          fld("Iuran pensiun / JHT dibayar sendiri, per bulan","c4","200000") +
+          '<label for="c5">Status PTKP</label><select id="c5">' +
+            Object.keys(PTKP).map(function(k){ return '<option value="'+k+'"'+(k==="K/2"?" selected":"")+'>'+k+" — "+rp(PTKP[k])+"</option>"; }).join("") +
+          "</select>";
+      },
+      hitung: function(){
+        var gaji = num($("c1").value), tunj = num($("c2").value), thr = num($("c3").value), iuran = num($("c4").value);
+        var status = $("c5").value;
+        var bruto = (gaji + tunj) * 12 + thr;
+        var bj = Math.min(bruto * 0.05, 6000000);
+        var iuranTh = iuran * 12;
+        var neto = bruto - bj - iuranTh;
+        var ptkp = PTKP[status];
+        var pkp = Math.max(0, bulatRibuan(neto - ptkp));
+        var l = lapisan(pkp);
+        var out = row("Penghasilan bruto setahun", rp(bruto)) +
+          row("Biaya jabatan 5%" + (bruto*0.05 > 6000000 ? " (dibatasi Rp6.000.000)" : ""), "−" + rp(bj)) +
+          row("Iuran pensiun setahun", "−" + rp(iuranTh)) +
+          row("Penghasilan neto", rp(neto), "sum") +
+          row("PTKP " + status, "−" + rp(ptkp)) +
+          row("Penghasilan Kena Pajak", rp(pkp), "sum") +
+          '<div class="srow head"><span>Tarif Pasal 17 berlapis</span><b></b></div>' +
+          l.rows.map(function(r){ return row(r.l, rp(r.v)); }).join("") +
+          row("PPh 21 setahun", rp(l.total), "total") +
+          row("Rata-rata per bulan", rp(l.total/12)) +
+          row("Tarif efektif terhadap bruto", bruto ? pct(l.total/bruto) : "0%");
+        return out;
+      }
+    },
+
+    pphbadan: {
+      nama: "PPh Badan & 31E",
+      note: "Tarif umum 22%. Fasilitas Pasal 31E memberi potongan 50% untuk bagian PKP yang dihitung dari proporsi Rp4,8 miliar terhadap peredaran bruto, selama peredaran bruto tidak melebihi Rp50 miliar.",
+      form: function(){
+        return '<h3 style="margin-top:0">PPh Badan</h3>' +
+          fld("Peredaran bruto setahun","c1","24000000000") +
+          fld("Penghasilan Kena Pajak","c2","1200000000") +
+          '<label class="check"><input type="checkbox" id="c3"> Perseroan terbuka memenuhi syarat (tarif 19%)</label>';
+      },
+      hitung: function(){
+        var pb = num($("c1").value), pkp = bulatRibuan(num($("c2").value));
+        var tbk = $("c3").checked;
+        var tarif = tbk ? 0.19 : 0.22;
+        var out = row("Peredaran bruto", rp(pb)) + row("Penghasilan Kena Pajak", rp(pkp));
+        var total;
+        if (pb <= 4800000000) {
+          total = pkp * tarif * 0.5;
+          out += row("Peredaran bruto ≤ Rp4,8 M → seluruh PKP dapat fasilitas", "");
+          out += row("50% × " + pct(tarif) + " × " + rp(pkp), rp(total));
+        } else if (pb <= 50000000000) {
+          var fasil = (4800000000 / pb) * pkp;
+          var sisa = pkp - fasil;
+          var p1 = fasil * tarif * 0.5, p2 = sisa * tarif;
+          total = p1 + p2;
+          out += row("Porsi berfasilitas = 4,8 M ÷ " + rp(pb), pct(4800000000/pb));
+          out += row("PKP berfasilitas", rp(fasil));
+          out += row("PKP tanpa fasilitas", rp(sisa));
+          out += row(pct(tarif*0.5) + " × " + rp(fasil), rp(p1));
+          out += row(pct(tarif) + " × " + rp(sisa), rp(p2));
+        } else {
+          total = pkp * tarif;
+          out += row("Peredaran bruto > Rp50 M → tanpa fasilitas 31E", "");
+          out += row(pct(tarif) + " × " + rp(pkp), rp(total));
+        }
+        out += row("PPh Badan terutang", rp(total), "total");
+        out += row("Tarif efektif terhadap PKP", pkp ? pct(total/pkp) : "0%");
+        out += row("Angsuran PPh 25 bulan berikutnya (sebelum kredit pajak)", rp(total/12));
+        return out;
+      }
+    },
+
+    ppn: {
+      nama: "PPN & PPnBM",
+      note: "Tarif PPN 12%. Untuk barang dan jasa selain barang mewah, dasar pengenaannya memakai nilai lain 11/12 dari harga jual sehingga bebannya efektif 11% (PMK 131/2024). Barang mewah memakai harga jual penuh.",
+      form: function(){
+        return '<h3 style="margin-top:0">PPN &amp; PPnBM</h3>' +
+          fld("Harga jual (belum termasuk pajak)","c1","10000000") +
+          '<label class="check"><input type="checkbox" id="c2"> Barang mewah (objek PPnBM)</label>' +
+          fld("Tarif PPnBM (%) — isi 0 bila tidak ada","c3","0");
+      },
+      hitung: function(){
+        var h = num($("c1").value), mewah = $("c2").checked, tp = num($("c3").value)/100;
+        var out = row("Harga jual", rp(h));
+        var dpp, ppn;
+        if (mewah) {
+          dpp = h; ppn = h * 0.12;
+          out += row("Barang mewah → DPP = harga jual penuh", rp(dpp));
+          out += row("PPN 12% × " + rp(dpp), rp(ppn));
+        } else {
+          dpp = h * 11/12; ppn = dpp * 0.12;
+          out += row("DPP nilai lain = 11/12 × harga jual", rp(dpp));
+          out += row("PPN 12% × " + rp(dpp), rp(ppn));
+          out += row("Beban efektif terhadap harga jual", pct(ppn/(h||1)));
+        }
+        var ppnbm = h * tp;
+        if (ppnbm > 0) out += row("PPnBM " + pct(tp) + " × " + rp(h), rp(ppnbm));
+        out += row("Total yang ditagih ke pembeli", rp(h + ppn + ppnbm), "total");
+        return out;
+      }
+    },
+
+    der: {
+      nama: "DER / thin cap",
+      note: "PMK 169/2015 menetapkan perbandingan utang terhadap modal paling tinggi 4 : 1. Koreksinya proporsional — bukan menghapus seluruh biaya bunga. Pada transaksi lintas negara, porsi yang dikoreksi dapat direklasifikasi menjadi dividen dan terutang PPh Pasal 26.",
+      form: function(){
+        return '<h3 style="margin-top:0">Debt-to-Equity Ratio</h3>' +
+          fld("Modal disetor","c1","80000000000") +
+          fld("Saldo utang","c2","500000000000") +
+          fld("Total biaya bunga setahun","c3","60000000000") +
+          fld("Tarif PPh 26 atas reklasifikasi dividen (%) — isi 0 bila dalam negeri","c4","20");
+      },
+      hitung: function(){
+        var modal = num($("c1").value), utang = num($("c2").value), bunga = num($("c3").value), t26 = num($("c4").value)/100;
+        var boleh = 4 * modal;
+        var out = row("Modal disetor", rp(modal)) + row("Saldo utang", rp(utang)) +
+                  row("Rasio utang : modal", modal ? (Math.round(utang/modal*100)/100).toLocaleString("id-ID") + " : 1" : "—") +
+                  row("Utang yang diperbolehkan (4 × modal)", rp(boleh));
+        if (utang <= boleh) {
+          out += row("Utang masih di bawah batas → tidak ada koreksi", "");
+          out += row("Bunga boleh dibiayakan", rp(bunga), "total");
+          return out;
+        }
+        var porsi = boleh / utang;
+        var ok = bunga * porsi, koreksi = bunga - ok;
+        out += row("Porsi yang lolos = " + rp(boleh) + " ÷ " + rp(utang), pct(porsi));
+        out += row("Bunga boleh dibiayakan", rp(ok), "sum");
+        out += row("Bunga dikoreksi (koreksi fiskal positif)", rp(koreksi), "total");
+        out += row("Tambahan PPh Badan 22% atas koreksi", rp(koreksi * 0.22));
+        if (t26 > 0) out += row("PPh 26 " + pct(t26) + " bila direklasifikasi jadi dividen", rp(koreksi * t26));
+        return out;
+      }
+    },
+
+    pkb: {
+      nama: "PKB & opsen",
+      note: "Dasar pengenaan PKB = NJKB × bobot. Tarif PKB maksimal 1,2% untuk provinsi yang terbagi dalam kabupaten/kota, dan kabupaten/kota memungut opsen 66% di atasnya. Gabungannya ≈ 2%, sama dengan beban aturan lama — opsen adalah realokasi, bukan kenaikan.",
+      form: function(){
+        return '<h3 style="margin-top:0">PKB + Opsen</h3>' +
+          fld("NJKB (nilai jual kendaraan bermotor)","c1","200000000") +
+          fld("Bobot","c2","1.05") +
+          fld("Tarif PKB (%)","c3","1.2") +
+          fld("Tarif opsen PKB (%)","c4","66");
+      },
+      hitung: function(){
+        var njkb = num($("c1").value), bobot = num($("c2").value) || 1, tarif = num($("c3").value)/100, ops = num($("c4").value)/100;
+        var dpp = njkb * bobot, pkb = dpp * tarif, opsen = pkb * ops;
+        return row("NJKB", rp(njkb)) +
+          row("Bobot", bobot.toLocaleString("id-ID")) +
+          row("Dasar pengenaan = NJKB × bobot", rp(dpp), "sum") +
+          row("PKB " + pct(tarif) + " (ke provinsi)", rp(pkb)) +
+          row("Opsen PKB " + pct(ops) + " (ke kabupaten/kota)", rp(opsen)) +
+          row("Total dibayar pemilik kendaraan", rp(pkb + opsen), "total") +
+          row("Beban gabungan terhadap dasar pengenaan", dpp ? pct((pkb+opsen)/dpp) : "0%");
+      }
+    }
+  };
+
+  function fld(label, id, val){
+    return '<label for="' + id + '">' + label + '</label><input id="' + id + '" type="text" inputmode="decimal" value="' + val + '">';
+  }
+
+  var aktif = "pph21";
+
+  function drawTabs(){
+    var bar = $("calcTabs"); bar.innerHTML = "";
+    Object.keys(CALC).forEach(function(k){
+      var b = document.createElement("button");
+      b.className = "chip" + (k===aktif ? " on" : "");
+      b.textContent = CALC[k].nama;
+      b.onclick = function(){ aktif = k; location.hash = k; draw(); };
+      bar.appendChild(b);
+    });
+  }
+
+  function hitung(){
+    try { $("steps").innerHTML = CALC[aktif].hitung(); }
+    catch (e) { $("steps").innerHTML = '<p class="hint">Periksa lagi angkanya.</p>'; }
+  }
+
+  function draw(){
+    drawTabs();
+    $("inputCard").innerHTML = CALC[aktif].form();
+    $("calcNote").innerHTML = "<h4>Catatan</h4><p style='margin-bottom:0'>" + CALC[aktif].note + "</p>";
+    $("inputCard").addEventListener("input", hitung);
+    $("inputCard").addEventListener("change", hitung);
+    // rapikan angka besar saat kursor meninggalkan kolom
+    $("inputCard").addEventListener("focusout", function(e){
+      var el = e.target;
+      if (!el || el.tagName !== "INPUT" || el.type !== "text") return;
+      var v = num(el.value);
+      if (v >= 10000 && Math.abs(v - Math.round(v)) < 0.0001) el.value = Math.round(v).toLocaleString("id-ID");
+    });
+    if (window.DRA_REF) window.DRA_REF.link($("calcNote"));
+    hitung();
+  }
+
+  var h = location.hash.replace(/^#/, "");
+  if (CALC[h]) aktif = h;
+  draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "dra-tax-hub",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Pusat materi perpajakan Indonesia — situs statis tanpa dependensi",
+  "scripts": {
+    "news": "node scripts/fetch-news.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

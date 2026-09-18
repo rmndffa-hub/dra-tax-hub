@@ -1,0 +1,67 @@
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Beranda</a> / Bank Soal</div>
+    <span class="eyebrow">Belajar santai</span>
+    <h1>Bank Soal &amp; Pembahasan</h1>
+    <p class="lead">Semua soal terbuka bersama kuncinya — dipakai untuk belajar, bukan untuk mengukur. Kalau ingin diuji dengan skor, pindah ke <a href="kuis.html">kuis</a>.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:34px">
+  <div class="wrap">
+    <div class="filter-bar" id="filterBar"></div>
+    <p class="lead" style="font-size:.95rem;margin-bottom:18px" id="countInfo"></p>
+    <div id="list"></div>
+  </div>
+</section>
+
+<!--SCRIPTS-->
+<script src="assets/js/soal.js"></script>
+<script>
+(function(){
+  var S = window.DRA_SOAL || [];
+  var topics = [];
+  S.forEach(function(s){ if(topics.indexOf(s.t)<0) topics.push(s.t); });
+  var active = "Semua";
+
+  var bar = document.getElementById("filterBar");
+  var list = document.getElementById("list");
+  var info = document.getElementById("countInfo");
+
+  function chips(){
+    bar.innerHTML = "";
+    ["Semua"].concat(topics).forEach(function(t){
+      var b = document.createElement("button");
+      b.className = "chip" + (t===active ? " on" : "");
+      var n = t==="Semua" ? S.length : S.filter(function(s){return s.t===t;}).length;
+      b.textContent = t + " (" + n + ")";
+      b.onclick = function(){ active = t; chips(); render(); };
+      bar.appendChild(b);
+    });
+  }
+
+  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+  function render(){
+    var items = active==="Semua" ? S : S.filter(function(s){ return s.t===active; });
+    info.textContent = items.length + " soal ditampilkan. Klik tiap soal untuk membuka kunci dan pembahasannya.";
+    list.innerHTML = items.map(function(s, i){
+      var opts = s.o.map(function(o, j){
+        var mark = j===s.a ? ' style="font-weight:700;color:var(--green)"' : "";
+        return '<li'+mark+'>'+esc(o)+(j===s.a?" ✓":"")+'</li>';
+      }).join("");
+      return '<details class="qa">' +
+        '<summary><span class="n">'+(i+1)+'.</span><span>'+esc(s.q)+'</span></summary>' +
+        '<div class="body">' +
+          '<ol type="A">'+opts+'</ol>' +
+          '<div class="key">Kunci: '+"ABCD"[s.a]+' — '+esc(s.o[s.a])+'</div>' +
+          '<p style="margin-bottom:0">'+esc(s.e)+'</p>' +
+          '<div class="meta" style="margin-top:12px"><span class="tag">'+esc(s.t)+'</span>'+(s.bs?'<span class="tag tag-gold">Benar/Salah</span>':'')+'</div>' +
+        '</div></details>';
+    }).join("");
+    if (window.DRA_REF) window.DRA_REF.link(list);
+  }
+
+  chips(); render();
+})();
+</script>
