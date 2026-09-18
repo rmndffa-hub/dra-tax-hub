@@ -1,0 +1,50 @@
+name: Perbarui umpan berita
+
+# Berjalan tiap 6 jam, dan bisa dijalankan manual dari tab Actions.
+# Waktu cron memakai UTC — 0,6,12,18 UTC = 07.00, 13.00, 19.00, 01.00 WIB.
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: umpan-berita
+  cancel-in-progress: false
+
+jobs:
+  perbarui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil kode
+        uses: actions/checkout@v4
+
+      - name: Siapkan Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Ambil berita
+        id: ambil
+        continue-on-error: true
+        run: node scripts/fetch-news.mjs
+
+      - name: Commit kalau ada perubahan
+        run: |
+          if [ -z "$(git status --porcelain assets/data/feed.json)" ]; then
+            echo "Tidak ada perubahan pada feed.json."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/feed.json
+          git commit -m "Perbarui umpan berita ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          git push
+
+      - name: Tandai gagal bila pengambilan bermasalah
+        if: steps.ambil.outcome == 'failure'
+        run: |
+          echo "::warning::Pengambilan berita gagal atau tidak menghasilkan item. Lihat log langkah 'Ambil berita' untuk melihat sumber mana yang mati."
+          exit 1
