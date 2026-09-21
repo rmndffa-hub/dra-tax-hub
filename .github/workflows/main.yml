@@ -27,17 +27,19 @@ jobs:
       - name: Ambil berita
         id: ambil
         continue-on-error: true
+        working-directory: dra-tax-hub
         run: node scripts/fetch-news.mjs
 
       - name: Commit kalau ada perubahan
         run: |
-          if [ -z "$(git status --porcelain assets/data/feed.json)" ]; then
+          FEED=dra-tax-hub/assets/data/feed.json
+          if [ -z "$(git status --porcelain $FEED)" ]; then
             echo "Tidak ada perubahan pada feed.json."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/feed.json
+          git add $FEED
           git commit -m "Perbarui umpan berita ($(date -u '+%Y-%m-%d %H:%M UTC'))"
           git push
 
