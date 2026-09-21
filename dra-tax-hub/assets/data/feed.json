@@ -1,7 +1,112 @@
 {
- "diperbarui": null,
+ "diperbarui": "2026-09-21T09:36:46.376Z",
  "jumlah": 0,
- "sumber": [],
- "items": [],
- "catatan": "File ini diisi otomatis oleh scripts/fetch-news.mjs lewat GitHub Actions. Selama situs masih diunggah dengan cara seret-dan-lepas, umpan otomatis tetap kosong dan itu normal."
+ "sumber": [
+  {
+   "nama": "Google News · PMK & aturan pajak",
+   "ok": true,
+   "jumlah": 95,
+   "error": null,
+   "ms": 513
+  },
+  {
+   "nama": "Google News · Coretax",
+   "ok": true,
+   "jumlah": 94,
+   "error": null,
+   "ms": 519
+  },
+  {
+   "nama": "Google News · DJP",
+   "ok": true,
+   "jumlah": 86,
+   "error": null,
+   "ms": 442
+  },
+  {
+   "nama": "Google News · Insentif pajak",
+   "ok": true,
+   "jumlah": 56,
+   "error": null,
+   "ms": 411
+  },
+  {
+   "nama": "Google News · Windfall tax",
+   "ok": true,
+   "jumlah": 4,
+   "error": null,
+   "ms": 283
+  },
+  {
+   "nama": "Google News · Pajak karbon",
+   "ok": true,
+   "jumlah": 8,
+   "error": null,
+   "ms": 374
+  },
+  {
+   "nama": "Google News · Pajak minimum global",
+   "ok": true,
+   "jumlah": 18,
+   "error": null,
+   "ms": 321
+  },
+  {
+   "nama": "Google News · Transfer pricing",
+   "ok": true,
+   "jumlah": 15,
+   "error": null,
+   "ms": 444
+  },
+  {
+   "nama": "Google News · OECD tax (EN)",
+   "ok": true,
+   "jumlah": 4,
+   "error": null,
+   "ms": 284
+  },
+  {
+   "nama": "DJP — pajak.go.id",
+   "ok": true,
+   "jumlah": 10,
+   "error": null,
+   "ms": 3423
+  },
+  {
+   "nama": "DDTCNews",
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 404",
+   "ms": 615
+  },
+  {
+   "nama": "Pajakku",
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 404",
+   "ms": 1687
+  },
+  {
+   "nama": "MUC Consulting",
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 404",
+   "ms": 1637
+  },
+  {
+   "nama": "Ortax",
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 404",
+   "ms": 2210
+  },
+  {
+   "nama": "JDIH Kemenkeu",
+   "ok": false,
+   "jumlah": 0,
+   "error": "fetch failed",
+   "ms": 10474
+  }
+ ],
+ "items": []
 }
