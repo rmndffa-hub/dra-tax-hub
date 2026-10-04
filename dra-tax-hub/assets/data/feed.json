@@ -1,111 +1,111 @@
 {
- "diperbarui": "2026-10-03T20:35:24.078Z",
+ "diperbarui": "2026-10-04T04:17:51.143Z",
  "jumlah": 0,
  "sumber": [
   {
    "nama": "Google News · PMK & aturan pajak",
    "ok": true,
-   "jumlah": 97,
+   "jumlah": 95,
    "error": null,
-   "ms": 571
+   "ms": 507
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
    "jumlah": 99,
    "error": null,
-   "ms": 416
+   "ms": 533
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 75,
+   "jumlah": 76,
    "error": null,
-   "ms": 483
+   "ms": 415
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
    "jumlah": 60,
    "error": null,
-   "ms": 382
+   "ms": 453
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 4,
    "error": null,
-   "ms": 271
+   "ms": 311
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
    "jumlah": 37,
    "error": null,
-   "ms": 357
+   "ms": 336
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 31,
+   "jumlah": 29,
    "error": null,
-   "ms": 347
+   "ms": 302
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 16,
    "error": null,
-   "ms": 363
+   "ms": 435
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
    "jumlah": 5,
    "error": null,
-   "ms": 276
+   "ms": 266
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 5805
+   "ms": 3101
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 397
+   "ms": 498
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 4901
+   "ms": 1508
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 4750
+   "ms": 1849
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1159
+   "ms": 1474
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
-   "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 6966
+   "error": "fetch failed",
+   "ms": 10479
   }
  ],
  "items": []
