@@ -1,5 +1,5 @@
 {
- "diperbarui": "2026-10-10T16:57:36.468Z",
+ "diperbarui": "2026-10-10T21:09:06.500Z",
  "jumlah": 0,
  "sumber": [
   {
@@ -7,105 +7,105 @@
    "ok": true,
    "jumlah": 97,
    "error": null,
-   "ms": 563
+   "ms": 616
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 398
+   "ms": 501
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 82,
+   "jumlah": 84,
    "error": null,
-   "ms": 449
+   "ms": 562
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
    "jumlah": 63,
    "error": null,
-   "ms": 412
+   "ms": 427
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 1,
    "error": null,
-   "ms": 229
+   "ms": 311
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
-   "jumlah": 33,
+   "jumlah": 32,
    "error": null,
-   "ms": 339
+   "ms": 403
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 24,
+   "jumlah": 22,
    "error": null,
-   "ms": 269
+   "ms": 329
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 15,
    "error": null,
-   "ms": 314
+   "ms": 441
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
    "jumlah": 6,
    "error": null,
-   "ms": 269
+   "ms": 314
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 3129
+   "ms": 3169
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 462
+   "ms": 428
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1749
+   "ms": 1674
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1848
+   "ms": 1353
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1436
+   "ms": 1418
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
    "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 6694
+   "ms": 6609
   }
  ],
  "items": []
