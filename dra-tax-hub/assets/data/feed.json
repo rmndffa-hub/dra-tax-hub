@@ -1,111 +1,111 @@
 {
- "diperbarui": "2026-10-12T14:24:54.586Z",
+ "diperbarui": "2026-10-13T00:07:38.333Z",
  "jumlah": 0,
  "sumber": [
   {
    "nama": "Google News · PMK & aturan pajak",
-   "ok": true,
-   "jumlah": 98,
-   "error": null,
-   "ms": 612
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 8758
   },
   {
    "nama": "Google News · Coretax",
-   "ok": true,
-   "jumlah": 100,
-   "error": null,
-   "ms": 455
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 8945
   },
   {
    "nama": "Google News · DJP",
-   "ok": true,
-   "jumlah": 90,
-   "error": null,
-   "ms": 538
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 9057
   },
   {
    "nama": "Google News · Insentif pajak",
-   "ok": true,
-   "jumlah": 57,
-   "error": null,
-   "ms": 436
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 7452
   },
   {
    "nama": "Google News · Windfall tax",
-   "ok": true,
-   "jumlah": 1,
-   "error": null,
-   "ms": 268
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 8223
   },
   {
    "nama": "Google News · Pajak karbon",
-   "ok": true,
-   "jumlah": 36,
-   "error": null,
-   "ms": 341
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 9802
   },
   {
    "nama": "Google News · Pajak minimum global",
-   "ok": true,
-   "jumlah": 23,
-   "error": null,
-   "ms": 348
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 5770
   },
   {
    "nama": "Google News · Transfer pricing",
-   "ok": true,
-   "jumlah": 21,
-   "error": null,
-   "ms": 461
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 7251
   },
   {
    "nama": "Google News · OECD tax (EN)",
-   "ok": true,
-   "jumlah": 6,
-   "error": null,
-   "ms": 342
+   "ok": false,
+   "jumlah": 0,
+   "error": "HTTP 503",
+   "ms": 9253
   },
   {
    "nama": "DJP — pajak.go.id",
-   "ok": true,
-   "jumlah": 10,
-   "error": null,
-   "ms": 3143
+   "ok": false,
+   "jumlah": 0,
+   "error": "fetch failed",
+   "ms": 1691
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 585
+   "ms": 1035
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1830
+   "ms": 1701
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1584
+   "ms": 2262
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1654
+   "ms": 1857
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
    "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 6880
+   "ms": 7061
   }
  ],
  "items": []
