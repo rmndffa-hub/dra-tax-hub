@@ -1,5 +1,5 @@
 {
- "diperbarui": "2026-10-20T03:22:54.953Z",
+ "diperbarui": "2026-10-20T10:55:31.753Z",
  "jumlah": 0,
  "sumber": [
   {
@@ -7,7 +7,7 @@
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 548
+   "ms": 584
   },
   {
    "nama": "Google News · Coretax",
@@ -19,93 +19,93 @@
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 82,
+   "jumlah": 83,
    "error": null,
-   "ms": 471
+   "ms": 469
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
    "jumlah": 55,
    "error": null,
-   "ms": 450
+   "ms": 404
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 3,
    "error": null,
-   "ms": 299
+   "ms": 305
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
-   "jumlah": 40,
+   "jumlah": 39,
    "error": null,
-   "ms": 386
+   "ms": 339
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 52,
+   "jumlah": 53,
    "error": null,
-   "ms": 470
+   "ms": 443
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 13,
    "error": null,
-   "ms": 474
+   "ms": 414
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
    "jumlah": 8,
    "error": null,
-   "ms": 311
+   "ms": 306
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 3029
+   "ms": 2863
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 568
+   "ms": 619
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1567
+   "ms": 1598
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1449
+   "ms": 1254
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1341
+   "ms": 1472
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
    "error": "fetch failed",
-   "ms": 10483
+   "ms": 10479
   }
  ],
  "items": []
