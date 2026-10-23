@@ -1,5 +1,5 @@
 {
- "diperbarui": "2026-10-23T10:59:56.116Z",
+ "diperbarui": "2026-10-23T16:27:10.292Z",
  "jumlah": 0,
  "sumber": [
   {
@@ -14,98 +14,98 @@
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 574
+   "ms": 483
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 49,
+   "jumlah": 30,
    "error": null,
-   "ms": 611
+   "ms": 411
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
-   "jumlah": 59,
+   "jumlah": 60,
    "error": null,
-   "ms": 568
+   "ms": 407
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 3,
    "error": null,
-   "ms": 365
+   "ms": 294
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
    "jumlah": 38,
    "error": null,
-   "ms": 608
+   "ms": 349
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 49,
+   "jumlah": 48,
    "error": null,
-   "ms": 546
+   "ms": 498
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 14,
    "error": null,
-   "ms": 559
+   "ms": 485
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
-   "jumlah": 9,
+   "jumlah": 5,
    "error": null,
-   "ms": 466
+   "ms": 273
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 2465
+   "ms": 3160
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 452
+   "ms": 548
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1799
+   "ms": 2166
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1744
+   "ms": 1647
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1159
+   "ms": 1442
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
-   "error": "fetch failed",
-   "ms": 10479
+   "error": "tidak ada item (mungkin bukan umpan RSS)",
+   "ms": 5933
   }
  ],
  "items": []
