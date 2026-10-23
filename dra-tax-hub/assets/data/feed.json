@@ -1,5 +1,5 @@
 {
- "diperbarui": "2026-10-22T21:11:17.562Z",
+ "diperbarui": "2026-10-23T03:22:05.846Z",
  "jumlah": 0,
  "sumber": [
   {
@@ -7,35 +7,35 @@
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 580
+   "ms": 738
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
-   "jumlah": 100,
+   "jumlah": 82,
    "error": null,
-   "ms": 540
+   "ms": 576
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 47,
+   "jumlah": 48,
    "error": null,
-   "ms": 413
+   "ms": 547
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
-   "jumlah": 58,
+   "jumlah": 59,
    "error": null,
-   "ms": 470
+   "ms": 454
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 3,
    "error": null,
-   "ms": 271
+   "ms": 289
   },
   {
    "nama": "Google News · Pajak karbon",
@@ -47,65 +47,65 @@
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 51,
+   "jumlah": 52,
    "error": null,
-   "ms": 414
+   "ms": 537
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 12,
    "error": null,
-   "ms": 387
+   "ms": 507
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
-   "jumlah": 10,
+   "jumlah": 9,
    "error": null,
-   "ms": 282
+   "ms": 303
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 2322
+   "ms": 2177
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 566
+   "ms": 632
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1634
+   "ms": 1403
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1103
+   "ms": 1243
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1550
+   "ms": 1130
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
    "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 6170
+   "ms": 7300
   }
  ],
  "items": []
