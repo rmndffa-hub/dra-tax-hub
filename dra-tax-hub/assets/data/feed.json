@@ -1,5 +1,5 @@
 {
- "diperbarui": "2026-10-24T10:16:47.809Z",
+ "diperbarui": "2026-10-24T15:22:50.058Z",
  "jumlah": 0,
  "sumber": [
   {
@@ -7,91 +7,91 @@
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 584
+   "ms": 572
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
    "jumlah": 100,
    "error": null,
-   "ms": 445
+   "ms": 434
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 49,
+   "jumlah": 48,
    "error": null,
-   "ms": 386
+   "ms": 435
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
-   "jumlah": 32,
+   "jumlah": 63,
    "error": null,
-   "ms": 286
+   "ms": 385
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 2,
    "error": null,
-   "ms": 259
+   "ms": 227
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
    "jumlah": 37,
    "error": null,
-   "ms": 326
+   "ms": 357
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 47,
+   "jumlah": 45,
    "error": null,
-   "ms": 431
+   "ms": 334
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
-   "jumlah": 16,
+   "jumlah": 17,
    "error": null,
-   "ms": 387
+   "ms": 436
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
-   "jumlah": 8,
+   "jumlah": 4,
    "error": null,
-   "ms": 274
+   "ms": 261
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 2926
+   "ms": 2763
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 507
+   "ms": 441
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1285
+   "ms": 1826
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1092
+   "ms": 1686
   },
   {
    "nama": "Ortax",
@@ -105,7 +105,7 @@
    "ok": false,
    "jumlah": 0,
    "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 8503
+   "ms": 10126
   }
  ],
  "items": []
