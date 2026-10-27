@@ -1,111 +1,111 @@
 {
- "diperbarui": "2026-10-27T11:35:40.276Z",
+ "diperbarui": "2026-10-27T17:27:53.864Z",
  "jumlah": 0,
  "sumber": [
   {
    "nama": "Google News · PMK & aturan pajak",
    "ok": true,
-   "jumlah": 57,
+   "jumlah": 99,
    "error": null,
-   "ms": 412
+   "ms": 529
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
-   "jumlah": 73,
+   "jumlah": 78,
    "error": null,
-   "ms": 465
+   "ms": 440
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 56,
+   "jumlah": 55,
    "error": null,
-   "ms": 419
+   "ms": 502
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
-   "jumlah": 63,
+   "jumlah": 30,
    "error": null,
-   "ms": 485
+   "ms": 340
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 4,
    "error": null,
-   "ms": 291
+   "ms": 286
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
-   "jumlah": 30,
+   "jumlah": 29,
    "error": null,
-   "ms": 338
+   "ms": 485
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
-   "jumlah": 17,
+   "jumlah": 32,
    "error": null,
-   "ms": 320
+   "ms": 367
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
    "jumlah": 13,
    "error": null,
-   "ms": 424
+   "ms": 611
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
    "jumlah": 4,
    "error": null,
-   "ms": 315
+   "ms": 287
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": true,
    "jumlah": 10,
    "error": null,
-   "ms": 2542
+   "ms": 2307
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 482
+   "ms": 507
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1670
+   "ms": 3769
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1933
+   "ms": 1065
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1260
+   "ms": 1312
   },
   {
    "nama": "JDIH Kemenkeu",
    "ok": false,
    "jumlah": 0,
-   "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 5926
+   "error": "fetch failed",
+   "ms": 10481
   }
  ],
  "items": []
