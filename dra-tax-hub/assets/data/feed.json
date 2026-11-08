@@ -1,104 +1,104 @@
 {
- "diperbarui": "2026-11-07T21:26:54.253Z",
+ "diperbarui": "2026-11-08T04:25:32.042Z",
  "jumlah": 0,
  "sumber": [
   {
    "nama": "Google News · PMK & aturan pajak",
    "ok": true,
-   "jumlah": 37,
+   "jumlah": 42,
    "error": null,
-   "ms": 393
+   "ms": 378
   },
   {
    "nama": "Google News · Coretax",
    "ok": true,
-   "jumlah": 64,
+   "jumlah": 48,
    "error": null,
-   "ms": 432
+   "ms": 316
   },
   {
    "nama": "Google News · DJP",
    "ok": true,
-   "jumlah": 39,
+   "jumlah": 46,
    "error": null,
-   "ms": 426
+   "ms": 361
   },
   {
    "nama": "Google News · Insentif pajak",
    "ok": true,
-   "jumlah": 70,
+   "jumlah": 67,
    "error": null,
-   "ms": 387
+   "ms": 350
   },
   {
    "nama": "Google News · Windfall tax",
    "ok": true,
    "jumlah": 2,
    "error": null,
-   "ms": 281
+   "ms": 247
   },
   {
    "nama": "Google News · Pajak karbon",
    "ok": true,
    "jumlah": 11,
    "error": null,
-   "ms": 300
+   "ms": 255
   },
   {
    "nama": "Google News · Pajak minimum global",
    "ok": true,
    "jumlah": 43,
    "error": null,
-   "ms": 349
+   "ms": 304
   },
   {
    "nama": "Google News · Transfer pricing",
    "ok": true,
-   "jumlah": 9,
+   "jumlah": 8,
    "error": null,
-   "ms": 322
+   "ms": 260
   },
   {
    "nama": "Google News · OECD tax (EN)",
    "ok": true,
    "jumlah": 7,
    "error": null,
-   "ms": 333
+   "ms": 245
   },
   {
    "nama": "DJP — pajak.go.id",
    "ok": false,
    "jumlah": 0,
    "error": "tidak ada item (mungkin bukan umpan RSS)",
-   "ms": 1546
+   "ms": 1751
   },
   {
    "nama": "DDTCNews",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 732
+   "ms": 617
   },
   {
    "nama": "Pajakku",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1726
+   "ms": 1990
   },
   {
    "nama": "MUC Consulting",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1690
+   "ms": 1859
   },
   {
    "nama": "Ortax",
    "ok": false,
    "jumlah": 0,
    "error": "HTTP 404",
-   "ms": 1741
+   "ms": 1318
   },
   {
    "nama": "JDIH Kemenkeu",
